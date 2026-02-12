@@ -1,0 +1,691 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0061)http://www.ehvv.net/bbs/dispbbs.php?boardid=8&id=16101&skin=1 -->
+<HTML lang=zh-CN xmlns="http://www.w3.org/1999/xhtml" 
+xml:lang="zh-CN"><HEAD><TITLE>基于新型非接触IC卡T5557读写器设计 - [安防监控技术交流专区] - E惠网论坛e惠网|e惠网论坛|专业论坛|技术论坛</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=GB2312">
+<META content="MSHTML 6.00.2900.3640" name=GENERATOR>
+<META content=e惠网|e惠网论坛|专业论坛|技术论坛 name=keywords>
+<META content=e惠网论坛是专业性质的大型网站交流平台 name=description>
+<META content=TRUE name=MSSmartTagsPreventParsing>
+<META http-equiv=MSThemeCompatible content=Yes><LINK href="favicon.ico" 
+rel="SHORTCUT ICON"><LINK 
+href="基于新型非接触IC卡T5557读写器设计 - [安防监控技术交流专区] - E惠网论坛e惠网e惠网论坛专业论坛技术论坛.files/style_css_1.css" 
+type=text/css rel=stylesheet>
+<STYLE type=text/css>DIV.info {
+	PADDING-RIGHT: 5px; BORDER-TOP: #cccccc 1px dotted; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; COLOR: #c5c5c5; LINE-HEIGHT: normal; PADDING-TOP: 5px
+}
+FONT.showtools {
+	COLOR: white; BACKGROUND-COLOR: #b88ffc
+}
+.postlary2 {
+	BORDER-RIGHT: #6595d6 1px solid; BORDER-TOP: #6595d6 1px solid; MARGIN: 0px auto; BORDER-LEFT: #6595d6 1px solid; BORDER-BOTTOM: #6595d6 1px solid; BACKGROUND-COLOR: #e4e8ef; TEXT-ALIGN: left; min-width: 760px
+}
+.postuserinfo {
+	FLOAT: left; WIDTH: 190px; TEXT-INDENT: 24px
+}
+.lockuser {
+	BORDER-RIGHT: #6595d6 1px solid; BORDER-TOP: #6595d6 3px double; FLOAT: right; MARGIN: 240px 0px 0px 10px; BORDER-LEFT: #6595d6 1px solid; WIDTH: 150px; COLOR: #00008b; LINE-HEIGHT: 30px; BORDER-BOTTOM: #6595d6 1px solid; HEIGHT: 30px; BACKGROUND-COLOR: #e4e8ef; TEXT-ALIGN: center
+}
+.vote {
+	FLOAT: left; BORDER-LEFT: #6595d6 1px solid; HEIGHT: 28px
+}
+.bodys {
+	PADDING-RIGHT: 0px; MARGIN-TOP: 10px; FONT-SIZE: 9pt; OVERFLOW-X: hidden; MARGIN-BOTTOM: 50px; WIDTH: 97%; WORD-BREAK: break-all; TEXT-INDENT: 24px; LINE-HEIGHT: 23px; HEIGHT: auto; WORD-WRAP: break-word
+}
+.tuser {
+	LINE-HEIGHT: 30px; PADDING-TOP: 3px; HEIGHT: 30px
+}
+.ouser {
+	FLOAT: left; MARGIN: 3px; WIDTH: 23px; TEXT-INDENT: 0px
+}
+.buser {
+	FLOAT: left; MARGIN: 5px; WIDTH: 15px; TEXT-INDENT: 0px
+}
+.cimg {
+	MARGIN: 5px 0px
+}
+.tfloat {
+	PADDING-RIGHT: 5px; FLOAT: right
+}
+</STYLE>
+
+<STYLE type=text/css>.postlary2 {
+	BORDER-RIGHT: #6595d6 1px solid; BORDER-TOP: #6595d6 1px solid; MARGIN: 0px auto; BORDER-LEFT: #6595d6 1px solid; BORDER-BOTTOM: #6595d6 1px solid; BACKGROUND-COLOR: #e4e8ef; TEXT-ALIGN: left; min-width: 760px
+}
+.postuserinfo {
+	FLOAT: left; WIDTH: 190px; TEXT-INDENT: 24px
+}
+.lockuser {
+	BORDER-RIGHT: #6595d6 1px solid; BORDER-TOP: #6595d6 3px double; FLOAT: right; MARGIN: 240px 0px 0px 10px; BORDER-LEFT: #6595d6 1px solid; WIDTH: 150px; COLOR: #00008b; LINE-HEIGHT: 30px; BORDER-BOTTOM: #6595d6 1px solid; HEIGHT: 30px; BACKGROUND-COLOR: #e4e8ef; TEXT-ALIGN: center
+}
+.vote {
+	FLOAT: left; BORDER-LEFT: #6595d6 1px solid; HEIGHT: 28px
+}
+.tuser {
+	LINE-HEIGHT: 30px; PADDING-TOP: 3px; HEIGHT: 30px
+}
+.ouser {
+	LEFT: 148px; MARGIN: 3px; WIDTH: 23px; TEXT-INDENT: 0px; POSITION: absolute
+}
+.buser {
+	LEFT: 170px; MARGIN: 5px; WIDTH: 15px; TEXT-INDENT: 0px; POSITION: absolute
+}
+.cimg {
+	MARGIN: 5px 0px
+}
+.tfloat {
+	PADDING-RIGHT: 5px; MARGIN-BOTTOM: 5px; PADDING-BOTTOM: 4px; WIDTH: 100%; BORDER-BOTTOM: #dde5ed 1px solid; TEXT-ALIGN: right
+}
+</STYLE>
+
+<SCRIPT 
+src="基于新型非接触IC卡T5557读写器设计 - [安防监控技术交流专区] - E惠网论坛e惠网e惠网论坛专业论坛技术论坛.files/main_new.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT language=JavaScript>var imgpath = 'templates/default/images/'</SCRIPT>
+
+<SCRIPT 
+src="基于新型非接触IC卡T5557读写器设计 - [安防监控技术交流专区] - E惠网论坛e惠网e惠网论坛专业论坛技术论坛.files/main.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="基于新型非接触IC卡T5557读写器设计 - [安防监控技术交流专区] - E惠网论坛e惠网e惠网论坛专业论坛技术论坛.files/tab.js" 
+type=text/javascript></SCRIPT>
+</HEAD>
+<BODY>
+<DIV style="MARGIN-TOP: 4px">
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD 
+    style="PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; PADDING-TOP: 2px" 
+    vAlign=center align=middle width=200><A 
+      href="http://www.ehvv.net/bbs"><IMG alt="" 
+      src="基于新型非接触IC卡T5557读写器设计 - [安防监控技术交流专区] - E惠网论坛e惠网e惠网论坛专业论坛技术论坛.files/logo.gif" 
+      border=0></A></TD>
+    <TD align=right colSpan=2><IFRAME marginWidth=0 marginHeight=0 
+      src="基于新型非接触IC卡T5557读写器设计 - [安防监控技术交流专区] - E惠网论坛e惠网e惠网论坛专业论坛技术论坛.files/BBS.swf" 
+      frameBorder=0 width=468 scrolling=no 
+height=60></IFRAME></TD></TR></TBODY></TABLE>
+<DIV id=t_menu style="MARGIN-TOP: 4px">
+<UL>
+  <LI class=m_li_top style="MARGIN-TOP: 4px">
+  <H1>欢迎您&nbsp;-&nbsp;</H1>
+  <H2 class=t1>游客：</H2></LI>
+  <LI class=m_li_top style="MARGIN-TOP: 4px"><A class=menu 
+  href="http://www.ehvv.net/bbs/login.php">登录</A>&nbsp;&nbsp; </LI>
+  <LI class=m_li_top style="MARGIN-TOP: 4px"><A class=menu 
+  href="http://www.ehvv.net/bbs/reg.php">注册</A>&nbsp;&nbsp; </LI>
+  <LI class=m_li_top style="MARGIN-TOP: 4px"><A class=menu 
+  href="http://www.ehvv.net/bbs/query.php?boardid=8">搜索</A>&nbsp;&nbsp; <!-- li begin--></LI>
+  <LI class=m_li_top onmouseover="showmenu('menu_22',0);" 
+  style="MARGIN-TOP: 4px"><A class=menu 
+  href="http://www.ehvv.net/bbs/dispbbs.php?boardid=8&amp;id=16101&amp;skin=1#">风格</A>&nbsp;&nbsp; 
+
+  <DIV class=submenu id=menu_22 onmouseout=hidemenu(1);hidemenu(0);>
+  <UL>
+    <LI><A 
+    href="http://www.ehvv.net/bbs/cookies.php?action=stylemod&amp;skinid=0&amp;boardid=8&amp;stype=default">恢复默认设置</A> 
+    </LI>
+    <LI onmouseover="showmenu('menu_221',1);"><A 
+    href="http://www.ehvv.net/bbs/dispbbs.php?boardid=8&amp;id=16101&amp;skin=1#">选择风格</A> 
+
+    <DIV class=submenu id=menu_221 onmouseout=hidemenu(1);hidemenu(0);>
+    <UL>
+      <LI><A 
+      href="http://www.ehvv.net/bbs/cookies.php?action=stylemod&amp;skinid=5&amp;boardid=8&amp;stype=style">默认CSS(论坛)</A> 
+      </LI>
+      <LI><A 
+      href="http://www.ehvv.net/bbs/cookies.php?action=stylemod&amp;skinid=7&amp;boardid=8&amp;stype=style">秋意盎然CSS(论坛)</A> 
+      </LI>
+      <LI><A 
+      href="http://www.ehvv.net/bbs/cookies.php?action=stylemod&amp;skinid=9&amp;boardid=8&amp;stype=style">淡蓝情怀CSS(论坛)</A> 
+      </LI>
+      <LI><A 
+      href="http://www.ehvv.net/bbs/cookies.php?action=stylemod&amp;skinid=11&amp;boardid=8&amp;stype=style">亮蓝分贝CSS(论坛)</A> 
+      </LI></UL></DIV></LI>
+    <LI class=m_li_top onmouseover="showmenu('menu_222',1);" 
+    style="MARGIN-TOP: 4px"><A 
+    href="http://www.ehvv.net/bbs/dispbbs.php?boardid=8&amp;id=16101&amp;skin=1#">选择语言</A> 
+
+    <DIV class=submenu id=menu_222 onmouseout=hidemenu(1);hidemenu(0);>
+    <UL>
+      <LI><A 
+      href="http://www.ehvv.net/bbs/cookies.php?action=stylemod&amp;skinid=3&amp;boardid=8&amp;stype=lang">简体中文(论坛)</A> 
+      </LI>
+      <LI><A 
+      href="http://www.ehvv.net/bbs/cookies.php?action=stylemod&amp;skinid=4&amp;boardid=8&amp;stype=lang">简体中文(个人空间)</A> 
+      </LI></UL></DIV></LI></UL></DIV><!-- li end--></LI>
+  <LI class=m_li_top onmouseover="showmenu('menu_21',0);" 
+  style="MARGIN-TOP: 4px"><A class=menu 
+  href="http://www.ehvv.net/bbs/boardstat.php?boardid=8">论坛状态</A>&nbsp;&nbsp;
+  <DIV class=submenu id=menu_21 onmouseout=hidemenu(1);hidemenu(0);>
+  <UL>
+    <LI><A href="http://www.ehvv.net/bbs/boardstat.php?boardid=8">今日帖数图例</A> 
+    </LI>
+    <LI><A 
+    href="http://www.ehvv.net/bbs/boardstat.php?action=lasttopicnum&amp;boardid=8">主题数图例</A> 
+    </LI>
+    <LI><A 
+    href="http://www.ehvv.net/bbs/boardstat.php?action=lastbbsnum&amp;boardid=8">总帖数图例</A> 
+    </LI>
+    <LI><A 
+    href="http://www.ehvv.net/bbs/boardstat.php?reaction=online&amp;boardid=8">在线图例</A> 
+    </LI>
+    <LI><A 
+    href="http://www.ehvv.net/bbs/boardstat.php?reaction=onlineinfo&amp;boardid=8">在线情况</A> 
+    </LI>
+    <LI><A 
+    href="http://www.ehvv.net/bbs/boardstat.php?reaction=onlineUserinfo&amp;boardid=8">用户组在线图例</A> 
+    </LI></UL></DIV></LI>
+  <LI class=m_li_top onmouseover="showmenu('menu_27',0);" 
+  style="MARGIN-TOP: 4px"><A class=menu 
+  href="http://www.ehvv.net/bbs/show.php?boardid=8">论坛展区</A>&nbsp;&nbsp; 
+  <DIV class=submenu id=menu_27 onmouseout=hidemenu(1);hidemenu(0);>
+  <UL>
+    <LI><A 
+    href="http://www.ehvv.net/bbs/show.php?filetype=0&amp;boardid=8">文件集浏览</A> 
+    </LI>
+    <LI><A 
+    href="http://www.ehvv.net/bbs/show.php?filetype=1&amp;boardid=8">图片集浏览</A> 
+    </LI>
+    <LI><A 
+    href="http://www.ehvv.net/bbs/show.php?filetype=2&amp;boardid=8">Flash浏览</A> 
+    </LI>
+    <LI><A 
+    href="http://www.ehvv.net/bbs/show.php?filetype=3&amp;boardid=8">音乐集浏览</A> 
+    </LI>
+    <LI><A 
+    href="http://www.ehvv.net/bbs/show.php?filetype=4&amp;boardid=8">电影集浏览</A> 
+    </LI>
+    <LI><A href="http://www.ehvv.net/bbs/show.php">贺卡发送</A> </LI></UL></DIV></LI>
+  <LI class=m_li_top style="MARGIN-TOP: 4px"><A class=menu 
+  href="http://www.ehvv.net/bbs/plus_tools_center.php">道具中心</A>&nbsp;&nbsp; 
+</LI>
+  <LI class=m_li_top style="MARGIN-TOP: 4px"><A class=menu 
+  href="http://www.ehvv.net/bbs/boardpermission.php?boardid=8&amp;action=myinfo">我能做什么</A> 
+  </LI></UL>
+<TABLE id=box_01 height=25 cellSpacing=0>
+  <TBODY>
+  <TR>
+    <TD align=middle><A 
+      href="http://www.ehvv.net/bbs/cookies.php?action=isleft" target=_top><IMG 
+      src="基于新型非接触IC卡T5557读写器设计 - [安防监控技术交流专区] - E惠网论坛e惠网e惠网论坛专业论坛技术论坛.files/isleft.gif" 
+      border=0></A> </TD></TR></TBODY></TABLE></DIV></DIV>
+<DIV style="MARGIN-TOP: 5px"></DIV>
+<DIV id=navigation 
+style="MARGIN: 13px 0px 0px; LINE-HEIGHT: 20px; HEIGHT: 20px; TEXT-ALIGN: left">
+<DIV style="FLOAT: left; MARGIN: 0px; LINE-HEIGHT: 22px; HEIGHT: 22px"><IMG 
+style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px" 
+src="基于新型非接触IC卡T5557读写器设计 - [安防监控技术交流专区] - E惠网论坛e惠网e惠网论坛专业论坛技术论坛.files/forum_nav.gif" 
+align=absMiddle>&nbsp;&nbsp;
+<UL 
+style="PADDING-RIGHT: 0px; DISPLAY: inline; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px">
+  <LI class=m_li onmouseover="showmenu('menu_topmenu_0', 0);" 
+  style="DISPLAY: inline"><A href="http://www.ehvv.net/bbs/index.php">E惠网论坛</A>
+  <DIV class=submenu id=menu_topmenu_0 
+  onmouseout=hidemenu(2);hidemenu(1);hidemenu(0);;>
+  <UL>
+    <LI class=m_li onmouseover="showmenu('menu_token_15e3a17b14552570', 1);"><A 
+    href="http://www.ehvv.net/bbs/index.php?boardid=1">[日常公告]</A>
+    <DIV class=submenu id=menu_token_15e3a17b14552570 
+    onmouseout=hidemenu(2);hidemenu(1);hidemenu(0);;>
+    <UL>
+      <LI><A 
+      href="http://www.ehvv.net/bbs/index.php?boardid=5">[论坛公告、实用软件区]</A></LI>
+      <LI><A href="http://www.ehvv.net/bbs/index.php?boardid=6">[斑竹会议室]</A></LI>
+      <LI><A 
+      href="http://www.ehvv.net/bbs/index.php?boardid=20">[兼职人员报名、讨论专区]</A></LI></UL></DIV></LI>
+    <LI class=m_li onmouseover="showmenu('menu_token_64af79bb4d8c6515', 1);"><A 
+    href="http://www.ehvv.net/bbs/index.php?boardid=2">[技术专区]</A>
+    <DIV class=submenu id=menu_token_64af79bb4d8c6515 
+    onmouseout=hidemenu(2);hidemenu(1);hidemenu(0);;>
+    <UL>
+      <LI><A 
+      href="http://www.ehvv.net/bbs/index.php?boardid=7">[通讯产品技术交流专区]</A></LI>
+      <LI><A 
+      href="http://www.ehvv.net/bbs/index.php?boardid=8">[安防监控技术交流专区]</A></LI>
+      <LI><A 
+      href="http://www.ehvv.net/bbs/index.php?boardid=9">[电脑软件技术交流专区]</A></LI>
+      <LI><A 
+      href="http://www.ehvv.net/bbs/index.php?boardid=10">[商务服务交流专区]</A></LI>
+      <LI><A 
+      href="http://www.ehvv.net/bbs/index.php?boardid=11">[办公文教设备技术交流专区]</A></LI>
+      <LI><A 
+      href="http://www.ehvv.net/bbs/index.php?boardid=22">[网络知识交流专区]</A></LI></UL></DIV></LI>
+    <LI class=m_li onmouseover="showmenu('menu_token_cb940fd3ab1b3d33', 1);"><A 
+    href="http://www.ehvv.net/bbs/index.php?boardid=3">[客户交流专区]</A>
+    <DIV class=submenu id=menu_token_cb940fd3ab1b3d33 
+    onmouseout=hidemenu(2);hidemenu(1);hidemenu(0);;>
+    <UL>
+      <LI><A 
+      href="http://www.ehvv.net/bbs/index.php?boardid=12">[客户问题答复专区]</A></LI>
+      <LI><A 
+      href="http://www.ehvv.net/bbs/index.php?boardid=13">[客户热门话题专区]</A></LI>
+      <LI><A 
+      href="http://www.ehvv.net/bbs/index.php?boardid=16">[客户问题交流专区]</A></LI>
+      <LI><A href="http://www.ehvv.net/bbs/index.php?boardid=19">[交友专区]</A></LI>
+      <LI><A 
+      href="http://www.ehvv.net/bbs/index.php?boardid=21">[财经股票点评交流专区]</A></LI></UL></DIV></LI>
+    <LI class=m_li onmouseover="showmenu('menu_token_b0714ce3049da6b4', 1);"><A 
+    href="http://www.ehvv.net/bbs/index.php?boardid=4">[休闲地带]</A>
+    <DIV class=submenu id=menu_token_b0714ce3049da6b4 
+    onmouseout=hidemenu(2);hidemenu(1);hidemenu(0);;>
+    <UL>
+      <LI><A 
+href="http://www.ehvv.net/bbs/index.php?boardid=14">[生活小百科]</A></LI>
+      <LI><A href="http://www.ehvv.net/bbs/index.php?boardid=15">[灌水乐园]</A></LI>
+      <LI><A 
+      href="http://www.ehvv.net/bbs/index.php?boardid=17">[各类广告发布专区-不健康的广告除外]</A></LI>
+      <LI><A 
+    href="http://www.ehvv.net/bbs/index.php?boardid=18">[情感交流]</A></LI></UL></DIV></LI></UL></DIV></LI></UL>&nbsp;&#8250;&#8250;&nbsp;
+<UL 
+style="PADDING-RIGHT: 0px; DISPLAY: inline; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 2px 0px 0px; PADDING-TOP: 0px">
+  <LI class=m_li onmouseover="showmenu('menu_token_4229c8fb08cf3ab9', 0);" 
+  style="DISPLAY: inline"><A 
+  href="http://www.ehvv.net/bbs/index.php?boardid=2">[技术专区]</A>
+  <DIV class=submenu id=menu_token_4229c8fb08cf3ab9 
+  onmouseout=hidemenu(2);hidemenu(1);hidemenu(0);;>
+  <UL>
+    <LI><A 
+    href="http://www.ehvv.net/bbs/index.php?boardid=7">[通讯产品技术交流专区]</A></LI>
+    <LI><A 
+    href="http://www.ehvv.net/bbs/index.php?boardid=8">[安防监控技术交流专区]</A></LI>
+    <LI><A 
+    href="http://www.ehvv.net/bbs/index.php?boardid=9">[电脑软件技术交流专区]</A></LI>
+    <LI><A 
+    href="http://www.ehvv.net/bbs/index.php?boardid=10">[商务服务交流专区]</A></LI>
+    <LI><A 
+    href="http://www.ehvv.net/bbs/index.php?boardid=11">[办公文教设备技术交流专区]</A></LI>
+    <LI><A 
+    href="http://www.ehvv.net/bbs/index.php?boardid=22">[网络知识交流专区]</A></LI></UL></DIV></LI></UL>&#8250;&#8250;&nbsp;<A 
+href="http://www.ehvv.net/bbs/index.php?boardid=8">[安防监控技术交流专区]</A>&#8250;&#8250;&nbsp;基于新型非接触IC卡T5557读写器设计 
+</DIV>
+<DIV style="MARGIN-TOP: 1px; FLOAT: right; HEIGHT: 22px"><A 
+href="http://www.ehvv.net/bbs/rssfeed.php?rssid=4&amp;boardid=8" 
+target=_blank><IMG title=聚合内容 alt=聚合内容 
+src="基于新型非接触IC卡T5557读写器设计 - [安防监控技术交流专区] - E惠网论坛e惠网e惠网论坛专业论坛技术论坛.files/rss.gif" 
+align=absMiddle border=0></A>&nbsp;<A 
+href="http://www.ehvv.net/bbs/boardhelp.php?boardid=8"><IMG title=系统帮助 alt=系统帮助 
+src="基于新型非接触IC卡T5557读写器设计 - [安防监控技术交流专区] - E惠网论坛e惠网e惠网论坛专业论坛技术论坛.files/help.gif" 
+align=absMiddle border=0></A> </DIV></DIV>
+<DIV style="MARGIN-TOP: 0px"></DIV>
+<SCRIPT type=text/JavaScript>	
+dv_GetPostIframe("8","boardrule","版 规 和 导 读",9999);//显示版面规则
+function setUserTimeZoneOffset()
+{
+	var js_date = new Date();
+	var timezoneoffset = -(js_date.getTimezoneOffset())*60;
+	document.cookie = 'dvbbs_user_timezone_offset=' + timezoneoffset;
+}
+//setInterval('setUserTimeZoneOffset()', 1000);
+setUserTimeZoneOffset();
+function DoLogout(logoutId)
+{	
+	if (-1 == document.cookie.indexOf('logout_id')) {
+		document.cookie = 'logout_id='+logoutId;
+	}
+	return true;
+}//end function DoLogout
+
+</SCRIPT>
+
+<DIV id=MagicFace 
+style="Z-INDEX: 99; VISIBILITY: hidden; POSITION: absolute"></DIV>
+<STYLE type=text/css>DIV.info {
+	PADDING-RIGHT: 5px; BORDER-TOP: #cccccc 1px dotted; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; COLOR: #c5c5c5; LINE-HEIGHT: normal; PADDING-TOP: 5px
+}
+FONT.showtools {
+	COLOR: white; BACKGROUND-COLOR: #b88ffc
+}
+.postlary2 {
+	BORDER-RIGHT: #6595d6 1px solid; BORDER-TOP: #6595d6 1px solid; MARGIN: 0px auto; BORDER-LEFT: #6595d6 1px solid; BORDER-BOTTOM: #6595d6 1px solid; BACKGROUND-COLOR: #e4e8ef; TEXT-ALIGN: left; min-width: 760px
+}
+.postuserinfo {
+	FLOAT: left; WIDTH: 190px; TEXT-INDENT: 24px
+}
+.lockuser {
+	BORDER-RIGHT: #6595d6 1px solid; BORDER-TOP: #6595d6 3px double; FLOAT: right; MARGIN: 240px 0px 0px 10px; BORDER-LEFT: #6595d6 1px solid; WIDTH: 150px; COLOR: #00008b; LINE-HEIGHT: 30px; BORDER-BOTTOM: #6595d6 1px solid; HEIGHT: 30px; BACKGROUND-COLOR: #e4e8ef; TEXT-ALIGN: center
+}
+.vote {
+	FLOAT: left; BORDER-LEFT: #6595d6 1px solid; HEIGHT: 28px
+}
+.tuser {
+	LINE-HEIGHT: 30px; PADDING-TOP: 3px; HEIGHT: 30px
+}
+.ouser {
+	LEFT: 148px; MARGIN: 3px; WIDTH: 23px; TEXT-INDENT: 0px; POSITION: absolute
+}
+.buser {
+	LEFT: 170px; MARGIN: 5px; WIDTH: 15px; TEXT-INDENT: 0px; POSITION: absolute
+}
+.cimg {
+	MARGIN: 5px 0px
+}
+.tfloat {
+	PADDING-RIGHT: 5px; MARGIN-BOTTOM: 5px; PADDING-BOTTOM: 4px; WIDTH: 100%; BORDER-BOTTOM: #dde5ed 1px solid; TEXT-ALIGN: right
+}
+</STYLE>
+
+<SCRIPT type=text/javascript>
+function astro(birth)
+{
+	if (birth!='')
+	{	var tmpstr;
+		var bstr;
+		var mm;
+		var yy;
+		var dd;
+		var birthmonth;
+		tmpstr=birth.split(' ')
+		bstr=tmpstr[0]
+		tmpstr=bstr.split('-')
+		yy=(tmpstr[0]*1)
+		mm=(tmpstr[1]*1)
+		dd=(tmpstr[2]*1)
+		switch(mm){
+		case 1 :
+		if(dd>=21){return('<img src=images/birth/z11.gif alt=水瓶座'+mm+'-'+dd+'>');}
+		else{return('<img src=images/birth/z10.gif alt=魔羯座'+mm+'-'+dd+'>');}
+		break;
+		case 2 :
+		if(dd>=20){return('<img src=images/birth/z12.gif alt=双鱼座'+mm+'-'+dd+'>');}
+		else{return('<img src=images/birth/z11.gif alt=水瓶座'+mm+'-'+dd+'>');}
+		break;
+		case 3 :
+		if(dd>=21){return('<img src=images/birth/z1.gif alt=白羊座'+mm+'-'+dd+'>');}
+		else{return('<img src=images/birth/z12.gif alt=双鱼座'+mm+'-'+dd+'>');}
+		break;
+		case 4 :
+		if(dd>=21){return('<img src=images/birth/z2.gif alt=金牛座'+mm+'-'+dd+'>');}
+		else{return('<img src=images/birth/z1.gif alt=白羊座'+mm+'-'+dd+'>');}
+		break;
+		case 5 :
+		if(dd>=22){return('<img src=images/birth/z3.gif alt=双子座'+mm+'-'+dd+'>');}
+		else{return('<img src=images/birth/z2.gif alt=金牛座'+mm+'-'+dd+'>');}
+		break;
+		case 6 :
+		if(dd>=22){return('<img src=images/birth/z4.gif alt=巨蟹座'+mm+'-'+dd+'>');}
+		else{return('<img src=images/birth/z3.gif alt=双子座'+mm+'-'+dd+'>');}
+		break;
+		case 7 :
+		if(dd>=23){return('<img src=images/birth/z5.gif alt=狮子座'+mm+'-'+dd+'>');}
+		else{return('<img src=images/birth/z4.gif alt=巨蟹座'+mm+'-'+dd+'>');}
+		break;
+		case 8 :
+		if(dd>=24){return('<img src=images/birth/z6.gif alt=处女座'+mm+'-'+dd+'>');}
+		else{return('<img src=images/birth/z5.gif alt=狮子座'+mm+'-'+dd+'>');}
+		break;
+		case 9 :
+		if(dd>=24){return('<img src=images/birth/z7.gif alt=天秤座'+mm+'-'+dd+'>');}
+		else{return('<img src=images/birth/z6.gif alt=处女座'+mm+'-'+dd+'>');}
+		break;
+		case 10 :
+		if(dd>=24){return('<img src=images/birth/z8.gif alt=天蝎座'+mm+'-'+dd+'>');}
+		else{return('<img src=images/birth/z7.gif alt=天秤座'+mm+'-'+dd+'>');}
+		break;
+		case 11 :
+		if(dd>=23){return('<img src=images/birth/z9.gif alt=射手座'+mm+'-'+dd+'>');}
+		else{return('<img src=images/birth/z8.gif alt=天蝎座'+mm+'-'+dd+'>');}
+		break;
+		case 12 :
+		if(dd>=22){return('<img src=images/birth/z10.gif alt=魔羯座'+mm+'-'+dd+'>');}
+		else{return('<img src=images/birth/z9.gif alt=射手座'+mm+'-'+dd+'>');}
+		break;
+		default : return('');
+}
+	}else{return('');}
+}
+function MM_showHideLayers() { //v6.0
+
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  obj=document.getElementById("MagicFace");
+  for (i=0; i<(args.length-2); i+=3) if (obj) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+
+function DispMagicEmot(MagicID,H,W){
+	MagicFaceUrl = "dv_plus/tools/magicface/swf/" + MagicID + ".swf";
+	document.getElementById("MagicFace").innerHTML = '<OBJECT codeBase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="' + W + '" height="' + H + '"><PARAM NAME=movie VALUE="'+ MagicFaceUrl +'"><param name=menu value=false><PARAM NAME=quality VALUE=high><PARAM NAME=play VALUE=false><param name="wmode" value="transparent"><embed src="' + MagicFaceUrl +'" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="' + W + '" height="' + H + '"></embed>';
+	document.getElementById("MagicFace").style.top = '250px';
+	document.getElementById("MagicFace").style.left = '250px';
+	document.getElementById("MagicFace").style.visibility = 'visible';
+	MagicID += Math.random();
+	setTimeout("MM_showHideLayers('MagicFace','','hidden')",5000);
+	NowMeID = MagicID;
+}
+function LoadMagicEmot(MagicID,topicid){
+	var cookiesstr=readCookie('mofaface_'+ topicid);
+	if (cookiesstr ==null){
+		createCookie('mofaface_'+ topicid,MagicID,365)
+		DispMagicEmot(MagicID,350,500)
+	}
+}
+
+</SCRIPT>
+
+<DIV class=main id=main 
+style="MARGIN-TOP: 4px; MARGIN-BOTTOM: 4px; LINE-HEIGHT: 28px; HEIGHT: 28px">
+<DIV style="FLOAT: left"><!-- // menu begin -->
+<DIV id=menu_nav_top style="HEIGHT: 30px">
+<DIV id=menu_nav>
+<UL>
+  <LI class=menu2 onmouseover="this.className='menu1'" 
+  onmouseout="this.className='menu2'">&nbsp;&nbsp;&nbsp;&nbsp;我要发表 
+  <DIV class=menu_list><A onmouseover="this.className='menu_list_hover'" 
+  style="CURSOR: hand" 
+  onclick="dv_PostDisplay('dvnewpost','post.php?action=new&amp;boardid=8','0');" 
+  onmouseout="this.className='menu_post'"><SPAN><IMG 
+  src="基于新型非接触IC卡T5557读写器设计 - [安防监控技术交流专区] - E惠网论坛e惠网e惠网论坛专业论坛技术论坛.files/new_post.gif" 
+  border=0></SPAN>发起话题</A><BR><!--//普通贴--><A 
+  onmouseover="this.className='menu_list_hover'" style="CURSOR: hand" 
+  onclick="dv_PostDisplay('dvnewvote','post.php?action=vote&amp;boardid=8','0')" 
+  onmouseout="this.className='menu_post'"><SPAN><IMG 
+  src="基于新型非接触IC卡T5557读写器设计 - [安防监控技术交流专区] - E惠网论坛e惠网e惠网论坛专业论坛技术论坛.files/vote_post.gif" 
+  border=0></SPAN>发起投票</A><BR><!--//投票贴--><A 
+  onmouseover="this.className='menu_list_hover'" style="CURSOR: hand" 
+  onclick="dv_PostDisplay('dvnewargue','post.php?action=argue_topic&amp;boardid=8','0')" 
+  onmouseout="this.className='menu_post'"><SPAN><IMG 
+  src="基于新型非接触IC卡T5557读写器设计 - [安防监控技术交流专区] - E惠网论坛e惠网e惠网论坛专业论坛技术论坛.files/pk_post.gif" 
+  border=0></SPAN>发起辩论</A><BR><!--//辩论贴--><A 
+  onmouseover="this.className='menu_list_hover'" style="CURSOR: hand" 
+  onclick="dv_PostDisplay('dvnewaction','post.php?action=active_topic&amp;boardid=8','0')" 
+  onmouseout="this.className='menu_post'"><SPAN><IMG 
+  src="基于新型非接触IC卡T5557读写器设计 - [安防监控技术交流专区] - E惠网论坛e惠网e惠网论坛专业论坛技术论坛.files/survey_post.gif" 
+  border=0></SPAN>发起活动</A><BR><!--//活动贴--></DIV></LI></UL></DIV>
+<DIV style="CLEAR: both"></DIV>
+<DIV id=menu_post><SPAN onmouseover="this.className='menu_post_hover'" 
+style="CURSOR: hand" 
+onclick="dv_PostDisplay('dvnewreback_1','post.php?action=re&amp;boardid=8&amp;id=16101&amp;star=1&amp;page=1','0')" 
+onmouseout="this.className='menu_post_a'">回复帖子</SPAN></DIV><!-- //回复贴——1 --></DIV><!-- // menu end --></DIV>
+<DIV style="FLOAT: right"><SPAN id=showpagelist></SPAN></DIV>
+<DIV style="FLOAT: right">您是本帖的第 <B>92</B> 个阅读者&nbsp;&nbsp;</DIV></DIV>
+<DIV></DIV><!--发贴模式begin-->
+<SCRIPT language=JavaScript>
+<!--
+	dv_GetPostIframe("0","dvnewpost","发起话题");//发表话题
+		dv_GetPostIframe("0","dvnewvote","发起投票");//发表投票
+	dv_GetPostIframe("0","dvnewargue","发起辩论");//发表辩论
+	dv_GetPostIframe("0","dvnewaction","发起活动");//发表活动
+		dv_GetPostIframe("0","dvnewreback_1","回复帖子");//发表回帖1
+		dv_GetPostIframe("0","dvcitation","引用回帖");//引用帖子
+	dv_GetPostIframe("0","dvreply","回复帖子");//回复帖子
+	dv_GetPostIframe("0","dvedit","编辑帖子");//编辑帖子
+	dv_GetPostIframe("0","dvmessanger","发起短信");//发起短信
+
+//-->dvglobaldiv
+</SCRIPT>
+<!--发贴模式END-->
+<DIV class=th>
+<DIV 
+style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: right; PADDING-BOTTOM: 0px; PADDING-TOP: 4px; TEXT-ALIGN: right"><A 
+title=平板显示帖子 style="FONT-WEIGHT: normal; MARGIN-RIGHT: 10px" 
+href="http://www.ehvv.net/bbs/dispbbs.php?boardid=8&amp;replyid=16117&amp;id=16101&amp;skin=0">平板</A> 
+<A title=打印本帖内容 style="FONT-WEIGHT: normal; MARGIN-RIGHT: 10px" 
+href="http://www.ehvv.net/bbs/topicother.php?t=5&amp;boardid=8&amp;id=16101" 
+target=_blank>打印</A> </DIV>
+<DIV 
+style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; WORD-BREAK: break-all; TEXT-INDENT: 10px; PADDING-TOP: 5px; HEIGHT: 24px">标题： 
+基于新型非接触IC卡T5557读写器设计</DIV></DIV>
+<TABLE class=tableborder4 style="TABLE-LAYOUT: fixed" cellSpacing=0 
+cellPadding=3 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD class=tablebody1 style="PADDING-LEFT: 5px; HEIGHT: 300px" vAlign=top 
+    width=180 rowSpan=2><A name=16117></A>
+      <DIV id=user_self_nav>
+      <UL>
+        <LI class=user2 onmouseover="this.className='user1'" 
+        onmouseout="this.className='user2'"><FONT face=Verdana 
+        color=#61b713><B>chacha</B></FONT><IMG 
+        style="MARGIN: 5px; VERTICAL-ALIGN: middle" 
+        src="基于新型非接触IC卡T5557读写器设计 - [安防监控技术交流专区] - E惠网论坛e惠网e惠网论坛专业论坛技术论坛.files/down.gif"> 
+
+        <DIV class=user_list><A title=访问chacha的我的空间 
+        href="http://www.ehvv.net/bbs/space.php?UserID_25.index.html" 
+        target=_blank><SPAN><IMG 
+        src="基于新型非接触IC卡T5557读写器设计 - [安防监控技术交流专区] - E惠网论坛e惠网e惠网论坛专业论坛技术论坛.files/space.gif"></SPAN>个人空间</A><BR></DIV></LI></UL></DIV>
+      <DIV style="CLEAR: both; WIDTH: 100%; HEIGHT: 30px">
+      <DIV class=ouser>
+      <DIV><IMG alt=帅哥哟，离线，有人找我吗？ 
+      src="基于新型非接触IC卡T5557读写器设计 - [安防监控技术交流专区] - E惠网论坛e惠网e惠网论坛专业论坛技术论坛.files/ofmale.gif"></DIV></DIV>
+      <DIV class=buser>
+      <SCRIPT language=javascript type=text/javascript>document.write (astro('365443200'));</SCRIPT>
+      </DIV></DIV>
+      <DIV style="PADDING-LEFT: 10px">
+      <DIV><IMG style="FLOAT: left" height=32 alt="" 
+      src="基于新型非接触IC卡T5557读写器设计 - [安防监控技术交流专区] - E惠网论坛e惠网e惠网论坛专业论坛技术论坛.files/image1.gif" 
+      width=32></DIV>
+      <DIV style="CLEAR: both"></DIV><IMG class=cimg 
+      src="基于新型非接触IC卡T5557读写器设计 - [安防监控技术交流专区] - E惠网论坛e惠网e惠网论坛专业论坛技术论坛.files/level8.gif"><BR>等级：蜘蛛侠<BR>文章：1202<BR>积分：102<BR>注册：2008-08-26 
+      15:09:13<BR></DIV>
+      <DIV style="CLEAR: both"></DIV></TD>
+    <TD class=tablebody1 style="BORDER-RIGHT-STYLE: none" vAlign=top width=*>
+      <DIV class=td_msg>
+      <DIV class=tfloat><SPAN 
+      style="FONT-SIZE: 11px; FLOAT: left; PADDING-TOP: 3px; FONT-FAMILY: arial"><IMG 
+      style="VERTICAL-ALIGN: middle" 
+      src="基于新型非接触IC卡T5557读写器设计 - [安防监控技术交流专区] - E惠网论坛e惠网e惠网论坛专业论坛技术论坛.files/time.gif" 
+      border=0>&nbsp;&nbsp;2008-09-26 09:46:35&nbsp;&nbsp;</SPAN><A 
+      title=收录该帖到我的空间 
+      href="http://www.ehvv.net/bbs/spacemanage.php?s=1&amp;t=1&amp;m=1&amp;boardid=8&amp;replyid=16117&amp;id=16101" 
+      target=_blank><IMG 
+      src="基于新型非接触IC卡T5557读写器设计 - [安防监控技术交流专区] - E惠网论坛e惠网e惠网论坛专业论坛技术论坛.files/spacefav.gif" 
+      align=middle border=0></A> </DIV>&nbsp;</DIV>
+      <DIV></DIV>
+      <DIV class=bodys style="MIN-HEIGHT: 200px; HEIGHT: 200px" 
+      onload="this.style.overflowX='auto';">引言&nbsp; 
+      <BR><BR>非接触卡根据射频电磁感应原理产生的，&nbsp;使用时无需任何接触、快捷、不易损坏，因此广泛的应用于各个领域。T5557&nbsp;卡是美国ATMEL&nbsp;公司新出品的一款感应卡，T5557是兼容e555x的RFID芯片,但又具有与e555x系列芯片不同的新性能，还有扩展模式。具有很大的应用前景。&nbsp;&nbsp; 
+      <BR><BR>一T5557/U2270B的特性及读写器的原理&nbsp;&nbsp; 
+      <BR>（一）非接触式T5557卡的基本性能以及其新性能&nbsp; 
+      <BR>T5557是一种调谐频率可从100&nbsp;kHz&nbsp;到150kHz的非接触卡类。它有密码设置和写保护，其读方式用户可设置，可以防冲突；T5557还可内置电容可掩膜选择，也可外配电容；它具有唯一64&nbsp;位序列号，所以具有可追溯性。T5557含有&nbsp;330&nbsp;位的EEPROM&nbsp;存储体，分成10&nbsp;块，每块33&nbsp;位，包括LOCK&nbsp;位都是可编程的。页0的块0&nbsp;包含模式/配置数据[1]，是控制模块，用来控制卡的各种操作特性，如同步信号，编码方式，波特率，数据流长度，加密和口令唤醒等功能的启用关闭等，在规则读时不被传送。页0&nbsp;的块7&nbsp;可以被使用作为写保护的密码。每块的0&nbsp;位是本块的锁位，一旦上锁，本块数据只读，不能再被改写。页1&nbsp;包含可追溯性数据，只读。T5557与e5550系列的区别在于T5557增加了扩张功能。以下首先主要说明T5557的扩展功能。&nbsp;&nbsp; 
+      <BR><BR>1．&nbsp;T5557&nbsp;的扩展模式[1]&nbsp;&nbsp; 
+      <BR><BR>一般的，block0&nbsp;的bit1~bit4(Master&nbsp;key)被设置到”6”或”9”，和X-mode&nbsp;位一起会使能扩展模式。&nbsp;&nbsp; 
+      <BR><BR>a)&nbsp;Master&nbsp;key=“9”：测试模式被激活，扩展模式也被使能。&nbsp;&nbsp; 
+      <BR><BR>b)&nbsp;Master&nbsp;key=“6”：任何测试模式都被禁止，但扩展模式仍然被使能。&nbsp;&nbsp; 
+      <BR><BR>c)&nbsp;Master&nbsp;key=“其它值”：扩展模式被禁止，即使X-mode&nbsp;位被设置了。&nbsp;&nbsp; 
+      <BR><BR>1.1比特率产生器&nbsp;&nbsp; 
+      <BR><BR>扩展模式下，比特率是二进制可编程的，可以被控制在适合下列公式的RF/2&nbsp;到RF/128&nbsp;之间的任何值。比特率＝RF/(2n+2)&nbsp;&nbsp; 
+      <BR><BR>1.2&nbsp;一次可编程选择&nbsp;&nbsp; 
+      <BR><BR>如果OTP&nbsp;位被设置，所有的块被写保护，另外此时若Master&nbsp;key=”6”，T5557&nbsp;的操作模式会永远被锁（OTP），如果Master&nbsp;key=”9”，允许重新配置T5557&nbsp;卡。&nbsp;&nbsp; 
+      <BR><BR>1.3反相数据输出&nbsp;&nbsp; 
+      <BR><BR>T5557&nbsp;在它的扩展模式支持反相数据输出选择。如果反相数据被使能，这个功能支持所有的基本编码类型。&nbsp;&nbsp; 
+      <BR><BR>（二）&nbsp;U2270B基站读写器的性能及特点&nbsp;&nbsp; 
+      <BR>U2270B的载波频率fosc为100KHz~150KHz，其调制方式为曼彻斯***和双相位码。U2270B的电源供给可为5V的稳压电源或者是12V的汽车蓄电池。它可以为RF场提供能量，其中在短距离运用时，外围驱动电路简单。U2270B还具有信号微调能力，而且其读写距离可达7－10cm。U2270B&nbsp;还具有电压输出功能可以给微处理器或其他外围电路供电。&nbsp;&nbsp; 
+      <BR><BR>U2270B&nbsp;具有省电模式和STANDBY控制可选,&nbsp;所以设计基站电路时可以按照功能的不同要求,&nbsp;设计基站的外围电路。&nbsp;&nbsp; 
+      <BR><BR>（三）总体结构设计&nbsp; 
+      <BR>&nbsp;&nbsp;&nbsp;&nbsp;非接触式IC卡是一种接口电路，它通过卡上配置的发射机应答器震荡线圈与读写器震荡线圈的耦合取得能量。通过必要的软件配合，保证卡与读写器间实现双向数据交换。&nbsp;&nbsp; 
+      <BR><BR>以Atmel公司的89S52单片机作为主控模块，与系列射频卡读写模块U2270B电路共同构成了一个射频卡读写器系统。At89s52单片机是一种低功耗，高性能的CMOS&nbsp;8位单片机[2]。它:继承了MCS-51系列单片机的优点。并且在指令和管脚封装上与其他内核的51系列单片机相兼容，同时片内具有WATCHDOG功能,当程序由于某种干扰而死机时，系统可以可靠复位，保证系统的正常运行。同时支持ISP在线下载。其中读写器的原理图如图1所示。&nbsp;&nbsp; 
+      <BR><BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;图1&nbsp;读写器的原理图&nbsp;&nbsp; 
+      <BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fig&nbsp;1&nbsp;the&nbsp;fig&nbsp;of&nbsp;read/write&nbsp;base&nbsp;station&nbsp;&nbsp; 
+      <BR><BR>二．读卡器与卡T5557的通讯及软件编程&nbsp;&nbsp; 
+      <BR>数据被写到卡T5557是通过用短的gap&nbsp;来中断RF&nbsp;场来实现的，两个gap&nbsp;之间时间编码的0/1&nbsp;信息要被传送。以下采用T5557的扩展模式对卡进行读写软件编程。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <BR><BR>（一）非接触IC卡的写操作&nbsp; 
+      <BR>在扩展模式下，为快速的写操作。采取的是快写方式Start&nbsp;gap&nbsp;为10~50FC，与普通模&nbsp;&nbsp; 
+      <BR><BR>式的间隔一样。Write&nbsp;gap为10~20FC。写数据0/1，正常的是12&nbsp;个场时钟为“0”,27&nbsp;个场时钟为1，无gap32&nbsp;个时钟周期则T5557&nbsp;退出写模式[1]。在软件编程中，采用定时器/计数器1的中断来实现gap中断RF场的准确定时计数。其中有四种写命令，&nbsp;其软件流程图如图2所示。&nbsp;&nbsp; 
+      <BR><BR>在非扩展模式下，数据被写到卡T5557与E5550&nbsp;的写模式是一致的。Gap&nbsp;的持续时间通常是50～100us,&nbsp;Start&nbsp;gap&nbsp;一般为10~50场周期，16~31&nbsp;个场周期表示“0”，48~63个场周期表示“1”，前一次gap&nbsp;以后64&nbsp;个场时钟周期没有gap&nbsp;产生，T5557&nbsp;退出写模式。如果接收的位数正确，卡开始执行命令，如发现错误，T5557&nbsp;退出写。&nbsp;&nbsp; 
+      <BR><BR>对比普通模式和扩展模式，扩展模式的写数据要比普通模式的写数据要节省一半的时间。节约了写卡的时间从而提高了工作的效率。&nbsp;&nbsp; 
+      <BR><BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;图2&nbsp;&nbsp;&nbsp;写卡流程图&nbsp;&nbsp; 
+      <BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fig&nbsp;2&nbsp;&nbsp;the&nbsp;flow&nbsp;fig&nbsp;of&nbsp;write&nbsp;card&nbsp;&nbsp; 
+      <BR><BR>（二）非接触IC卡的读操作&nbsp; 
+      <BR>在扩展模式下，T5557&nbsp;序列开始标记是一种特殊的阻尼模式，可以用来同步读卡器。序列开始标记由两位组成（01or10），如果在扩展模式，配置位29&nbsp;被设置，序列开始标记会被插入每个要传送的块之前[1]。注意：相邻的序列开始标记是相反的。在对T5557的读卡过程中首先要读取序列开始标记01或10后在对数据进行读取。而T5557&nbsp;的序列终结符在非扩展模式下是和E5550&nbsp;兼容的，由4&nbsp;个“1”位周期组成。&nbsp;&nbsp; 
+      <BR><BR>采用曼彻斯***读取T5557的数据。位数据1对应着电平上跳，位数据0对应着电平下跳[1]。在编程序时，在位传送周期P的1/4和位传送周期P的3/4处读取电平的状态，从而确定数据位0/1。所以要准确定时计数，在的软件编程中采用外部中断0和外部中断1来准确定时计数。&nbsp;&nbsp; 
+      <BR><BR>在此过程中要注意位传送周期P的大小。根据资料的计算公式，以载波频率fosc=125KHz，位传送率为RF/32（由BLOCLK0来配置）来计算位传送周期P=1/（125KHz*32）&nbsp;[1]=256us。理论上为256us，但实际在读取过程中会有些偏差，我们通过多次实验测量位传送周期P，总结得出位周期的比理论上的P偏小，平均值为230&nbsp;，P的最大值为260，P最小值为190（当然我们不同的读卡器可能对此P的大小有所影响）。把位传送周期限制在一个范围，从而更准确的读取位是0还是1。否则无法正确的读取卡上的数据。程序框图如图3所示。&nbsp;&nbsp; 
+      <BR><BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;图3&nbsp;&nbsp;读卡流程图&nbsp;&nbsp; 
+      <BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fig&nbsp;3&nbsp;the&nbsp;flow&nbsp;fig&nbsp;of&nbsp;read&nbsp;card&nbsp;&nbsp; 
+      <BR><BR>三．&nbsp;结语&nbsp;&nbsp; 
+      <BR>T5557相比较于E555x增加了扩展模块并且兼容了E555x的基本功能，又在此基础上增加了扩展功能。在T5557的扩展模式下，节省了对卡的读写时间，极大的提高了效率。e5550与T5557在价格上差别不大，因此T5557的应用前景非常的乐观。&nbsp;T5557卡以及读写器以成功应用于智能非接触式IC水表,并严格通过稳定性测试。&nbsp;&nbsp;</DIV></TD></TR>
+  <TR>
+    <TD class="tablebody1 ad_border">
+      <DIV style="FLOAT: left; MARGIN-LEFT: 5px"></DIV>
+      <DIV 
+      style="FLOAT: right; MARGIN-RIGHT: 5px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
+      href="http://www.ehvv.net/bbs/dispbbs.php?boardid=8&amp;id=16101&amp;skin=1#top"><IMG 
+      alt="" 
+      src="基于新型非接触IC卡T5557读写器设计 - [安防监控技术交流专区] - E惠网论坛e惠网e惠网论坛专业论坛技术论坛.files/p_up.gif" 
+      border=0></A> </DIV></TD></TR></TBODY></TABLE><BR>
+<DIV class=bar0 style="HEIGHT: 26px; TEXT-ALIGN: left">
+<DIV style="FLOAT: right; HEIGHT: 26px"><SPAN id=showpagelist></SPAN><SPAN 
+id=showclose></SPAN></DIV><SELECT id=BoardJumpList 
+onchange="if(this.options[this.selectedIndex].value!='')location='index.php?boardid='+this.options[this.selectedIndex].value;" 
+name=BoardJumpList><OPTION value=0>跳转到版面...</OPTION><OPTION 
+  value=1>╋[日常公告]</OPTION><OPTION 
+  value=5>&nbsp;&nbsp;├[论坛公告、实用软件区]</OPTION><OPTION 
+  value=6>&nbsp;&nbsp;├[斑竹会议室]</OPTION><OPTION 
+  value=20>&nbsp;&nbsp;├[兼职人员报名、讨论专区]</OPTION><OPTION 
+  value=2>╋[技术专区]</OPTION><OPTION 
+  value=7>&nbsp;&nbsp;├[通讯产品技术交流专区]</OPTION><OPTION value=8 
+  selected>&nbsp;&nbsp;├[安防监控技术交流专区]</OPTION><OPTION 
+  value=9>&nbsp;&nbsp;├[电脑软件技术交流专区]</OPTION><OPTION 
+  value=10>&nbsp;&nbsp;├[商务服务交流专区]</OPTION><OPTION 
+  value=11>&nbsp;&nbsp;├[办公文教设备技术交流专区]</OPTION><OPTION 
+  value=22>&nbsp;&nbsp;├[网络知识交流专区]</OPTION><OPTION 
+  value=3>╋[客户交流专区]</OPTION><OPTION 
+  value=12>&nbsp;&nbsp;├[客户问题答复专区]</OPTION><OPTION 
+  value=13>&nbsp;&nbsp;├[客户热门话题专区]</OPTION><OPTION 
+  value=16>&nbsp;&nbsp;├[客户问题交流专区]</OPTION><OPTION 
+  value=19>&nbsp;&nbsp;├[交友专区]</OPTION><OPTION 
+  value=21>&nbsp;&nbsp;├[财经股票点评交流专区]</OPTION><OPTION 
+  value=4>╋[休闲地带]</OPTION><OPTION value=14>&nbsp;&nbsp;├[生活小百科]</OPTION><OPTION 
+  value=15>&nbsp;&nbsp;├[灌水乐园]</OPTION><OPTION 
+  value=17>&nbsp;&nbsp;├[各类广告发布专区-不健康的广告除外]</OPTION><OPTION 
+  value=18>&nbsp;&nbsp;├[情感交流]</OPTION></SELECT> </DIV><IFRAME 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 0px; HEIGHT: 0px; BORDER-RIGHT-WIDTH: 0px" 
+name=hiddenframe src="about:blank"></IFRAME>
+<DIV id=postlist style="MARGIN-TOP: 10px; MARGIN-BOTTOM: 10px"></DIV>
+<SCRIPT type=text/JavaScript>
+<!--
+window.document.body.onload = function(){
+	if (window.top!=window.self) {
+		document.getElementById('main').focus();
+	}
+};
+//-->
+</SCRIPT>
+
+<SCRIPT>
+//表型图片列表切换
+var dvPOSTEMOT = new NewsSpanBar();
+dvPOSTEMOT.f=0;
+dvPOSTEMOT.titleid = "savvy_bot";
+dvPOSTEMOT.bodyid = "savvybody";
+dvPOSTEMOT.class_hiton = "tabgroup_on";
+dvPOSTEMOT.class_hitno = "tabgroup";
+dvPOSTEMOT.load();
+</SCRIPT>
+
+<DIV style="MARGIN: 30px auto; TEXT-ALIGN: center"><IFRAME marginWidth=0 
+marginHeight=0 src="about:blank" frameBorder=0 width=468 scrolling=no 
+height=60></IFRAME></DIV>
+<DIV style="MARGIN: 0px auto; WIDTH: 430px">
+<DIV style="FLOAT: left; WIDTH: 400px; TEXT-ALIGN: left"><SMALL>Powered by <A 
+href="http://www.dvbbs.net/" target=_blank><B>Dvbbs.PHP</B></A> <A 
+href="http://php.dvbbs.net/" target=_blank><B style="COLOR: #ff9900">2.0</B></A> 
+&copy;2000 - 2006 <A href="http://www.ehvv.net/"><FONT face=Verdana, sans-serif 
+Helvetica, Arial,><B>ehvvbbs<FONT color=#cc0000>.Net</FONT></B></FONT></A> 
+<BR>Processed in 0.515531(s), 7 queries , Gzip enabled</SMALL><BR></DIV>
+<DIV style="FLOAT: left"><A href="https://www.alipay.com/" target=_blank><IMG 
+alt=本论坛采用阿里巴巴支付宝网上银行支付系统，安全、可靠、便捷 
+src="基于新型非接触IC卡T5557读写器设计 - [安防监控技术交流专区] - E惠网论坛e惠网e惠网论坛专业论坛技术论坛.files/alipay.gif" 
+border=0></A> </DIV></DIV></BODY></HTML>

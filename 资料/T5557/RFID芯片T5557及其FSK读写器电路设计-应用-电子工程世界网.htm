@@ -1,0 +1,978 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta http-equiv="Content-Language" content="zh-CN" /> 
+
+<meta name="author" content="电子工程世界" /> 
+
+<meta name="Copyright" content="电子工程世界" /> 
+
+<link rel="stylesheet" href="http://1.eewimg.cn/css/main.css" type="text/css" media="all" />
+
+<link href="http://1.eewimg.cn/favicon.ico" rel="shortcut icon" />
+
+<title>RFID芯片T5557及其FSK读写器电路设计-应用-电子工程世界网</title>
+
+<meta name="keywords" content=",,应用">
+
+<meta name="description" content="国外电子元器件">
+
+<script language="javascript" src="http://1.eewimg.cn/js/config.js"></script>
+
+<script language="javascript" src="http://1.eewimg.cn/js/common.js"></script>
+
+<script language="javascript" src="http://1.eewimg.cn/js/prototype.js"></script>
+
+<script language="javascript" src="http://1.eewimg.cn/js/stat.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js" type="text/javascript"></script>
+ 
+ <script src="http://1.eewimg.cn/js/lib/jquery.cluetip.js" type="text/javascript"></script>
+ <script src="http://1.eewimg.cn/js/lib/demo.js" type="text/javascript"></script>
+ 
+ <link href="http://1.eewimg.cn/js/lib/jquery.cluetip.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+<div class="eeworldwrap">
+
+        <div class="eeworldwrapper">  
+
+                    <div class="eeworld_nav">
+
+                    
+
+                    <ul class="pubinfo">
+
+
+
+<script src="http://home.eeworld.com.cn/cmslogin.php" language="javascript"></script>                      
+
+      
+
+   <!-------搜索---------->
+<form action="http://www.eeworld.com.cn/eew_search.php" id="cse-search-box">
+         
+            <input type="hidden" name="cx" value="016875307059225064185:vplbfkbz9j8" />
+            <input type="hidden" name="cof" value="FORID:10" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <li style="margin-left:20px;"><input class="input_text" type="text" name="q" size="20" value=" " />
+            &nbsp;<input class="sub_btn" type="submit" name="sa" value="全站搜索" /><span>&nbsp;&nbsp;<a href="http://www.eeworld.com.cn/my/search.php">高级搜索</a></span></li>
+        
+          </form>
+          <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&lang=zh-Hans"></script>
+  
+<!-------搜索---------->
+
+
+
+                    <li class="fun"><a onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.eeworld.com.cn')" href="#">设为首页</a>&nbsp;&nbsp;&#124;&nbsp;&nbsp;<a onClick="window.external.AddFavorite('http://www.eeworld.com.cn','电子工程世界');"href="#">加入收藏</a></li>
+
+                    </ul>
+
+                    
+
+                    <ul class="pubnav">
+
+                     <li><a href="http://www.eeworld.com.cn/">首页</a></li>
+
+      <li><a href="http://www.eeworld.com.cn/my/moretype.php?t=1">新闻</a></li>
+
+      <li><a href="http://www.eeworld.com.cn/my/moretype.php?t=2">产品</a></li>
+
+      <li><a href="http://www.eeworld.com.cn/my/moretype.php?t=3">应用设计</a></li>      
+
+<li><a href="http://circuit.eeworld.com.cn/">电子电路</a></li>
+
+<li><a href='http://datasheet.eeworld.com.cn/'>电子器件</a></li>
+
+      <li><a href="http://news.eeworld.com.cn/mcu/">单片机</a></li>
+
+      <li><a href="http://news.eeworld.com.cn/qrs/">嵌入式</a></li>
+
+      <li><a href="http://news.eeworld.com.cn/mndz/ ">模拟电路</a></li>
+
+      <li><a href="http://news.eeworld.com.cn/DSP/">DSP</a></li>
+
+      <li><a href="http://news.eeworld.com.cn/dygl/">电源管理</a></li>
+
+      <li><a href="http://news.eeworld.com.cn/FPGA/">FPGA</a></li>
+
+      <li><a href="http://news.eeworld.com.cn/news/rfandwireless/">RF</a></li>
+
+      <li><a href="http://www.eeworld.com.cn/manufacture/">半导体设计/制造</a></li>
+
+      <li><a href="http://news.eeworld.com.cn/news/sensor/">传感技术</a></li>
+
+      <li><a href="http://news.eeworld.com.cn/news/memory">缓冲储存</a></li>
+
+      <li class="nobor"><a href="http://www.eeworld.com.cn/MEMS/">MEMS</a></li>
+
+                    </ul>
+
+                    </div>              
+
+                    <div class="secnav">
+
+                    
+
+                        <a href="/designarticles"><img src="http://1.eewimg.cn/logo/0.gif" width="113" height="59"/></a>
+
+                      <ul class="topsecnav">
+
+
+   
+
+
+
+   
+
+
+
+   
+
+
+
+   
+
+
+
+   
+
+
+
+
+                        <li><a href="/qcdz/"  >汽车电子</a>
+
+                                                      </li>
+
+   
+
+
+
+
+                        <li><a href="/xfdz/"  >手机/便携</a>
+
+                                                      </li>
+
+   
+
+
+
+
+                        <li><a href="/szds/"  >数字电视</a>
+
+                                                      </li>
+
+   
+
+
+
+
+                        <li><a href="/wltx/"  >网络通信</a>
+
+                                                      </li>
+
+   
+
+
+
+
+                        <li><a href="/gykz/"  >工业控制</a>
+
+                                                      </li>
+
+   
+
+
+
+
+                        <li><a href="/Test_and_measurement/"  >测试测量</a>
+
+                                                      </li>
+
+   
+
+
+
+
+                        <li><a href="http://news.eeworld.com.cn/news/computer/"  >计算机</a>
+
+                                                      </li>
+
+   
+
+
+
+
+                        <li><a href="/afdz/"  >安防电子</a>
+
+                                                      </li>
+
+   
+
+
+
+
+                        <li><a href="/medical_electronics/"  >医疗电子</a>
+
+                                                      </li>
+
+   
+
+
+
+
+                        <li><a href="http://bbs.eeworld.com.cn"  >论坛</a>
+
+                                                      </li>
+
+   
+
+
+
+
+                        <li><a href="http://home.eeworld.com.cn"  >博客</a>
+
+                                                      </li>
+
+   
+
+
+
+   
+
+
+
+   
+
+
+
+   
+
+
+
+   
+
+
+
+   
+
+
+
+   
+
+
+
+   
+
+
+
+   
+
+
+
+   
+
+
+
+   
+
+
+
+   
+
+
+
+   
+
+
+
+   
+
+
+
+   
+
+
+
+   
+
+
+
+   
+
+
+
+   
+
+
+
+   
+
+
+
+   
+
+
+
+   
+
+
+
+
+<li><ul>
+                                <li><a href="/designarticles/sape/" style="">安防电子</a>&#124;</li>
+
+                                <li><a href="/designarticles/ylbj/" style="">医疗电子</a>&#124;</li>
+
+                                <li><a href="/designarticles/gykz/" style="">工业控制</a>&#124;</li>
+
+
+                                </ul></li>
+
+<li><a href='http://www.eeworld.com.cn/zt/'>专题</a></li>
+
+                        </ul> 
+
+                    </div>
+
+
+
+<div class="eeworld_conp2">
+<div class="eeworld_conp2_left">
+<div class="eeworld_conp2_leftwrap">
+<div style="height:22px; padding:5px 2px; border-top:1px #CCCCCC solid;">
+
+ 			<form action="http://www.eeworld.com.cn/search_data.php" method="get" target="_blank" style="border:1px #FF6633 solid; width:130px; height:20px; float:right; margin-right:1px; "><input type="image" src="http://1.eewimg.cn/image_index/search_box.gif" style="float:right; margin:0px; padding:0px;" /><input type="text" name="k" size="18" style=" width:95px; height:15px; margin:1px 0 0 1px; border:0 none; background: transparent none repeat scroll 0 0;"/></form>
+<span style="float:left; font-size:12px; color:#FF6633; font-weight:600; margin-left:1px;">搜器件:</span>
+            </div>
+
+<h4>社区最新活动</h4>
+<script language="javascript" src="http://www.eeworld.com.cn/data/js/22.js"></script>	
+        </div>
+        <!--sidebar AD_1-->
+<div class="leftad"><script language="javascript" src="http://www.eeworld.com.cn/data/js.php?id=9"></script></div>
+<script language='javascript' src='http://1.eewimg.cn/ad/ad_left_text.php?channelid=3'></script>         <!--AD_1 end-->
+ <div class="eeworld_conp2_leftwrap">
+<h4>EEWORLD独家</h4>
+<ul>
+
+<li><a href="/exclusives/2009/1127/article_194.html" title="平稳融合，恒忆半导体全方位领跑存储器市场"  target="_blank">
+平稳融合，恒忆半导体全方...</a></li>
+
+<li><a href="/exclusives/2009/1123/article_193.html" title="Sense & Power 彰显MEMS产品拓展决心"  target="_blank">
+Sense &amp; Power 彰显MEMS...</a></li>
+
+<li><a href="/exclusives/2009/1118/article_191.html" title="关注客户需求，微芯解密成功之道"  target="_blank">
+关注客户需求，微芯解密成...</a></li>
+
+<li><a href="/exclusives/2009/1113/article_190.html" title="电子系统设计论坛探讨信息产业创新之路"  target="_blank">
+电子系统设计论坛探讨信...</a></li>
+
+<li><a href="/exclusives/2009/1014/article_176.html" title="元器件小批量网购体验：B2C有待改善"  target="_blank">
+元器件小批量网购体验：B2...</a></li>
+
+<li><a href="/exclusives/2009/1109/article_187.html" title="可编程逻辑：换个方式理解中国创造"  target="_blank">
+可编程逻辑：换个方式理解...</a></li>
+
+<li><a href="/exclusives/2009/1112/article_188.html" title="物联网：前途是光明的 道路是曲折的"  target="_blank">
+物联网：前途是光明的 道...</a></li>
+
+<li><a href="/exclusives/2009/1109/article_186.html" title="网络与存储双管齐下  LSI“两手抓两手都要硬”"  target="_blank">
+网络与存储双管齐下  LS...</a></li>
+
+
+</ul> </div>
+         <!--sidebar AD_1--><div class="leftad"><script language="javascript" src="http://www.eeworld.com.cn/data/js.php?id=13"></script></div>
+         <div class="eeworld_conp2_leftwrap">
+         <h4>精彩专题</h4>
+         
+<script language="javascript" src="http://www.eeworld.com.cn/data/js/28.js"></script>
+<ul>
+
+<li><a href="http://www.eeworld.com.cn/zhuanti/20091124chitron/20091124chitron.html" title="应对危机驰创人从容面对"  target="_blank">
+应对危机驰创人从容面对</a></li>
+
+<li><a href="http://www.eeworld.com.cn/zhuanti/20091113foundry/20091113foundry.html" title="SMIC与TSMC恩仇录"  target="_blank">
+SMIC与TSMC恩仇录</a></li>
+
+<li><a href="http://www.eeworld.com.cn/zhuanti/20091102wulianwang/wulianwang20091102.html" title="物联网 让我欢喜让我忧"  target="_blank">
+物联网 让我欢喜让我忧</a></li>
+
+<li><a href="http://www.eeworld.com.cn/zhuanti/20091103mcu/20091103mcu.html" title="关于单片机抗干扰的大讨论"  target="_blank">
+关于单片机抗干扰的大讨...</a></li>
+
+<li><a href="http://www.eeworld.com.cn/zhuanti/20091023qrs/20091023qrs.html" title="山寨？产业链？嵌入式的思考"  target="_blank">
+山寨？产业链？嵌入式的思考...</a></li>
+
+
+</ul> </div>
+         <!--sidebar AD_1--><div class="leftad"><script language="javascript" src="http://www.eeworld.com.cn/data/js.php?id=14"></script></div>
+        <div class="eeworld_conp2_leftwrap">
+<h4>白皮书排行</h4>
+<ul>
+
+ <li><a href="/whitepaper/2009/0730/down_89.html" title="MultiSIM10中文教程 "  target="_blank">MultiSIM10中文教程 </a></li>
+ 
+
+ <li><a href="/whitepaper/2009/0811/down_132.html" title="压力传感器与 Microchip模拟外设的接口"  target="_blank">压力传感器与 Microchip模...</a></li>
+ 
+
+ <li><a href="/whitepaper/2009/0810/down_125.html" title="电容触摸传感的软件处理"  target="_blank">电容触摸传感的软件处理...</a></li>
+ 
+
+ <li><a href="/whitepaper/2009/0806/down_120.html" title="Microchip ZigBee™ 协议栈"  target="_blank">Microchip ZigBee™ 协议...</a></li>
+ 
+
+ <li><a href="/whitepaper/2009/0810/down_127.html" title="使用PIC16F72X中的电容触摸传感模块"  target="_blank">使用PIC16F72X中的电容触...</a></li>
+ 
+
+
+</ul> 
+</div>         
+        <div class="eeworld_conp2_leftwrap">
+<h4>最新推荐</h4>
+<ul>
+
+<li><a href="/mcu/2009/1022/article_1490.html" title="NXP低功耗LPC1000系列六大突出优势"  target="_blank">
+NXP低功耗LPC1000系列六...</a></li>
+
+<li><a href="/designarticles/others/200910/article_18741.html" title="运用JMP和试验设计开展金融创新"  target="_blank">
+运用JMP和试验设计开展...</a></li>
+
+<li><a href="/designarticles/consumer/200909/article_18739.html" title="新汉发布数字多媒体平台旗舰专用机PDS 5541"  target="_blank">
+新汉发布数字多媒体平台...</a></li>
+
+<li><a href="/designarticles/network/200605/2917.html" title="单线CAN总线收发器芯片AU5790"  target="_blank">
+单线CAN总线收发器芯片A...</a></li>
+
+<li><a href="http://www.eeworld.com.cn/medical_electronics/2008/1130/article_434.html" title="基于NCP1351B的脑电采集仪的电源设计"  target="_blank">
+基于NCP1351B的脑电采集...</a></li>
+
+<li><a href="http://www.eeworld.com.cn/qcdz/2008/1118/article_558.html" title="Microchip的永磁无刷直流电机驱动系统应用"  target="_blank">
+Microchip的永磁无刷直...</a></li>
+
+<li><a href="http://www.eeworld.com.cn/gykz/2008/1112/article_1356.html" title="基于单片机+CPLD的多路精确延时控制系统设计"  target="_blank">
+基于单片机+CPLD的多路...</a></li>
+
+<li><a href="http://www.eeworld.com.cn/FPGA/2008/1009/article_287.html" title="第三方软件快速实现FPGA嵌入式系统设计"  target="_blank">
+第三方软件快速实现FPGA...</a></li>
+
+
+</ul> 
+</div>
+        <!--sidebar AD_1-->
+        <div class="leftad">
+        	<script language="javascript" src="http://www.eeworld.com.cn/data/js.php?id=4"></script>
+        </div>
+        <div class="eeworld_conp2_leftwrap">
+<h4>频道点击排行</h4>
+<ul class="clickliststyle">
+
+
+
+<li><a href="/designarticles/packing/200605/3632.html" title="TL431的原理及应用研究"  target="_blank">
+
+TL431的原理及应用研究
+</a></li>
+
+
+
+<li><a href="/designarticles/packing/200605/3615.html" title="高压大电流达林顿晶体管阵列系列产品及其应用"  target="_blank">
+
+高压大电流达林顿晶体管...
+</a></li>
+
+
+
+<li><a href="/designarticles/ledanddisplay/200801/article_17489.html" title="七段LED显示译码器"  target="_blank">
+
+七段LED显示译码器
+</a></li>
+
+
+
+<li><a href="/designarticles/analog/200612/7386.html" title="LM324四运放的应用"  target="_blank">
+
+LM324四运放的应用
+</a></li>
+
+
+
+<li><a href="/designarticles/power/200610/6719.html" title="实用小功率开关稳压电源的设计"  target="_blank">
+
+实用小功率开关稳压电源...
+</a></li>
+
+
+
+<li><a href="/designarticles/control/200605/1656.html" title="电压驱动型脉宽调制器TL494"  target="_blank">
+
+电压驱动型脉宽调制器TL...
+</a></li>
+
+
+
+<li><a href="/designarticles/analog/200606/4575.html" title="四电压比较器LM339的8个典型应用例子"  target="_blank">
+
+四电压比较器LM339的8个...
+</a></li>
+
+
+
+<li><a href="/designarticles/computer/200605/3936.html" title="USB接口芯片的原理及应用"  target="_blank">
+
+USB接口芯片的原理及应用
+</a></li>
+
+
+
+<li><a href="/designarticles/sensor/200606/4313.html" title="温度传感器"  target="_blank">
+
+温度传感器
+</a></li>
+
+
+
+<li><a href="/designarticles/control/200705/13578.html" title="实用的步进电机驱动电路"  target="_blank">
+
+实用的步进电机驱动电路
+</a></li>
+
+
+
+
+</ul></div>
+         <div class="eeworld_conp2_leftwrap">
+<h4>新闻点击排行</h4>
+<ul class="clickliststyle">
+
+
+
+<li><a href="/news/others/200911/article_25293.html" title="ESG看惠普对3Com的收购: 惠普任重而道远"  target="_blank">
+
+ESG看惠普对3Com的收购:...
+</a></li>
+
+
+
+<li><a href="/news/others/200911/article_25352.html" title="美国国家科学基金会向康奈尔大学拨款"  target="_blank">
+
+美国国家科学基金会向康...
+</a></li>
+
+
+
+<li><a href="/news/others/200911/article_25357.html" title="2009 年度EEWORLD社区网友大评选活动"  target="_blank">
+
+2009 年度EEWORLD社区网...
+</a></li>
+
+
+
+<li><a href="/news/others/200911/article_25356.html" title="THEMATHWORKS推出新版并行计算工具箱"  target="_blank">
+
+THEMATHWORKS推出新版并...
+</a></li>
+
+
+
+<li><a href="http://www.eeworld.com.cn/manufacture/2009/1128/article_1929.html" title="科锐携手燎原大举推进LED道路照明发展"  target="_blank">
+
+科锐携手燎原大举推进LE...
+</a></li>
+
+
+
+<li><a href="http://www.eeworld.com.cn/manufacture/2009/1128/article_1928.html" title="苹果NAND Flash减单　三星、新帝策略转向"  target="_blank">
+
+苹果NAND Flash减单　三...
+</a></li>
+
+
+
+<li><a href="http://www.eeworld.com.cn/mndz/2009/1127/article_1885.html" title="ADI最新任命多位高管，优化组织架构"  target="_blank">
+
+ADI最新任命多位高管，优...
+</a></li>
+
+
+
+<li><a href="http://www.eeworld.com.cn/manufacture/2009/1127/article_1915.html" title="第四季度收入增长强劲，代工厂仍面临挑战"  target="_blank">
+
+第四季度收入增长强劲，代...
+</a></li>
+
+
+
+<li><a href="http://www.eeworld.com.cn/manufacture/2009/1127/article_1921.html" title="上海集成电路业走出最坏时期 两年后翻番"  target="_blank">
+
+上海集成电路业走出最坏...
+</a></li>
+
+
+
+<li><a href="http://www.eeworld.com.cn/manufacture/2009/1127/article_1920.html" title="二轮调研结束:将出台多晶硅产业指导意见"  target="_blank">
+
+二轮调研结束:将出台多...
+</a></li>
+
+
+
+
+</ul></div>
+        
+        
+</div>
+<script type="text/javascript">
+function fontZoom(size)
+{
+$('content').style.fontSize=size+'px';
+}
+</script>
+<div class="eeworld_conp2_right">
+<div class="eeworldpagelist">
+            <h5>你现在的位置>><a href="/designarticles/">应用</a> >> <a href="/designarticles/rfandwireless/">RF/无线通信</a> >> </h5>
+<div class="eeworldstory">
+<h1>RFID芯片T5557及其FSK读写器电路设计 </h1>
+<h4>2007-03-09 19:03:27&nbsp;&nbsp;&nbsp;作者：合肥工业大学  单承赣&nbsp;&nbsp;&nbsp;来源：<a href="#" target="_blank">互联网</a></h4>
+摘要：T5557是兼容e555x的RFID芯片，但又具有与e555x系列芯片不同的新性能。文章着重介绍了T5557的新特点及工作原理，并对其RSK工作模式下读写器的电路设计作了分析，最后给出了D类功放和FSK解调的应用电路。  
+    关键词：RFID T5557 读写器 FSK D类功放  
+1 T5557的主要特点  
+T5557的Atmel公司生产的非接触式无源可读写RFID器件，这的工作频率（载波）为125kHz。可兼容e555x系列芯片。T5557芯片具有以下主要特性：  
+*具有75pF的片上谐振电路电容；  
+*7%26;#215;32bit EEPROM数据存储器（包含32bit的密码存储器）；  
+*独立的64位可追踪数据存储器；
+
+<img src="/info/images/iie/200412/8a.gif" border=0>
+
+    *EEPROM中的配置存储器可能设置芯片工作参数；  
+*数据速率可在RF/2和RF/128之间的以2的幂次可选；  
+*编码方式：NRZ、曼彻斯特及Biphase码；  
+*调制方式：FSK、PSK、直接；  
+*具有请求应答（AOR）、密码、常规读、直接访问等多种工作模式；  
+*具有写保护特性；
+<img src="/info/images/iie/200412/8b.gif" border=0>
+  
+*OTP（一次可编程）功能。
+
+2 T5557的应用系统构成  
+T5557的典型应用系统构成图如图1所示。图中，读写器向T5557（亦称之为tag）传送射频能量和读写命令，同时接收T5557芯片以负载调制方式送来的数据信号。  
+3 内部组成及工作原理  
+3．1 内部组成电路  
+实际上，T5557芯片的内部电路组成框图也示于图1，从图中可以看出，它由模拟前端、写解码、比特率产生器、调制器、模式寄存器、控制器、存储器、编程用高压产生器、测试逻辑等电路构成。其中：模拟前端电路主要完成芯片模拟信号的处理和变换，包括电流产生、时钟提取、载波中断（空隙gap）检测、负载调制、ESD保护等电路；写解码电路主要在读写器向芯片写数据时，用来解读有关写操作码，并对写数据流进行校验；HV产生器可产生对EEPROM进行编程写入所需的高电压；控制器主要完成四种功能，一是在上电（POR）有效后及读期间，用配置存储器数据（在EEPROM的块0中，见后述）装载模式寄存器，以保证芯片按设置方式工作。二是控制对存储器的访问。三是处理写命令和数据写入。四是在密码模式中，将接收操作码后的32位值与存贮的密码进行比较和判别；调制器用于实现FSK、PSK调制；T5557具有330位EEPROM存储器，其结构如图2所示，分为页0和页1两页。页0的块0是配置存储器。每块的位0是块锁存位，一旦锁存置位，本块（包括锁存位）不能通过射频再次编程。T5557中EEPROM的可追踪数据是指Atmel在生产制造测试过程所保留的众多识别数据，可供查询，这是e555x系列没有的。  
+此外，T5557中配置存储器的功能结构位图如图3所示。  
+3．2 T5557的初始化及读写器通信  
+电源上电后（POR有效），T5557将对存储在EEPROM块0中的数据进行初始化，此时若图3中的POR位为0，则在约3ms后按块0的调制参数设置进行调制。若需置位POR，则其初始化时间约为67ms。  
+在卡（tag）与读写器进行通信时：通常由卡将存贮在EEPROM中的数据以负载调制方式循环送至读写器。根据传送数据循环组织方式的不同又可分为常规（regular）读模式、块读模式和序列终止符模式。具体如下：  
+（1）常规读模式：传送数据序列从块1的第一位开始至最后一块（最大为块7）的第32位。最后一块的块号由配置存储器的参数MAXBLK值确定。若MAXBLK为0或1，则不断传送块0或块1的数据。工作于此模式时，在传送循环结构数据之前其发送的第一位为逻辑0。
+
+图3
+
+    （2）块读模式：在直接访问命令下工作时，仅有被寻址的块被读。在配置存储器PWD位置1时的密码模式下，对32位块的直接访问需要32位密码，若密码不匹配，则T5557会返回常规读模式。在块读模式下的第一位也为逻辑0。  
+（3）序列终止符模式（ST）：这是与e5550兼容的一种方式，在数据传送开始和循环数据开始时插入一个序列ST（4位1组成），来实现与读写器的同步。但序列仅用于FSK和曼彻特码调制方式。ST序列第2和第4位时段负载调制在FSK模式时一直关断，在曼彻斯特码时一直接通。该方式通常由EEPROM块0的ST位置1实现。  
+3．3 读写器至卡的通信  
+读写器发出的命令和写数据可由中断载波形式空隙（gap）的方法来实现，并以两个gap之间的持续时间来编码0和1。当gap时间在50"150μs时，两gap之间的24Tc(Tc为载波周期)时间长为0，54Tc时间长为1，当大于64Tc时间长而无gap再出现时，T5557退出写模式。若命令正确，T5557将正常执行；若出现错误，则T5557转至常规读模式。  
+序列中的第一个gap被称为起始gap。为了便于T5557的检测，一般情况下，起始gap应大于其后的gap（见图4）。
+
+图4
+
+    （1）写数据协议  
+读写器发出双位码，作为命令传送至T5557。命令的有关构成列于表1。
+
+表1 命令表  
+
+
+
+命令
+命令码
+
+后续位构成  
+
+AOR
+10
+密码（第1～32位）
+
+标准写
+1P
+锁定位L+数据（第1～32位）+地址（第2～0位）
+
+保护写
+1P
+密码（第1～32位）+锁定位L+数据（第1～32为）+地址（第20位）
+
+直接访问（PWD=1）
+1P
+密码（第1～32位）+0+地址（第2～0位)
+
+直接访问（PWD=0）
+1P
+0+地址（第20位）
+
+页0/1常规读
+1P
+　
+
+Reset命令
+00
+　
+注：表中P为页选择（P为0或1）  
+（2）AOR（请求应答）模式（此地密码位PWD=1）  
+当AOR置1（块0），T5557在装载块0后并不调制，将等待来自读写器的有效AOR命令，以备唤醒。AOR命令利用密码激活匹配的T5557芯片，该命令可用于防止冲突，以选择所要的卡读写。  
+（3）编程写入  
+当所有写信息已被T5557正确接收时，便可编程写入。在写序列传送结束和编程之间有一段延迟。编程写入时间为5.6ms。编程写入成功后，T5557进入块读模式，并传送刚编程写入的块。一个完整的写序列成功的过程如图4所示。
+
+图5
+
+    3．4 扩展模式（X-Mode）  
+在块0中将Master key（4位）设置为6或9并将X-Mode位置1，便可进入扩展模式。Master key等于9时可进入测试模式，等于6时不允许测试模式。其它Master key位置都不能使T5557进入X-Mode，即使X-Mode位置1也不能进入。扩展模式（和e555x不兼容）具有下列特点：  
+*波特率：该波特率的值由块0的第9位至14位（n5至n0）的位值n来确定，波特率为fc/(2n+2)，其中fc为载波频率。  
+*调制编码方式：由块0的第16至20位设置，编码不同于e555x兼容的方式。  
+*OTP功能：若块0的OTP（第24位）置1，所有锁存位置1，则所有块都是写保护的。若Master key值为6，则T5557的工作模式被锁存，即为OTP功能。若Master key值为9，则测试模式访问允许重构配置。  
+*序列开始标志：它由两位（10或01）组成，用于同步读写器，在每一块数据传送开始时插入，10和01是交替使用的。  
+*反向数据输出：使数据输出反向（即1与0反向，输出为其反）。  
+*快速写。快写模式时，两个Gap之间是12Tc时间长为0，是27Tc时间长为1。而在一个gap后，超过32Tc时间长而不出现下一个gap时，T5557将退出该快写模式。
+
+<img src="/info/images/iie/200412/8f.gif" border=0>
+
+4 FSK读写器电路设计  
+4．1 FSK调制  
+T5557芯片的FSK调制方式有FSK1、FSK2、FSK1a和FSK2a四种，其参数列于表2。一个典型的FSK调制波形如图5所示。
+
+表2 T5557的FSK调制（fc为载波频率）  
+
+
+
+模式
+数据0的频率f0
+数据1的频率f1
+
+FSK1
+fc/5
+fc/8
+
+FSK2
+fc/10
+fc/8
+
+FSK1a
+fc/8
+fc/5
+
+FSK2a
+fc/8
+fc/10
+4．2 FSK读写器  
+当T5556采用FSK调制模式时，其读写器应具有对应的解调电路，图6所示是一种FSK读写器的电路结构框图。它由4MHz晶振振荡器、分频器、载波功放、gap控制、包络检波、滤波放大、脉冲成形、FSK解调、微控制及与主机接口电路等组成。<script type="text/javascript">
+function ImgZoom(Id)//重新设置图片大小 防止撑破表格
+{
+var w = $(Id).width;
+var m = 650;
+if(w < m){return;}
+else{
+var h = $(Id).height;
+$(Id).height = parseInt(h*m/w);
+$(Id).width = m;
+}
+}
+window.onload = function()
+{
+var Imgs = $("content").getElementsByTagName("img");
+var i=0;
+for(;i<Imgs.length;i++)
+{
+ImgZoom(Imgs[i]);
+}
+}
+       </script>
+<div style="float:center;"></div>
+<br>
+<div id="jinwen" style="list-style-type:square;padding:5 0 5 20;">
+<font size="4" face="华文细黑" color="#1E0A50">相近文章：</font>
+<br>
+<br>
+
+<dd style="background:url() bottom repeat-x;line-height:27px;font-size:14px;">·<a href="/designarticles/rfandwireless/200802/article_17746.html" title="浅析RFID印刷天线技术及应用价值"  target="_blank">
+浅析RFID印刷天线技术及应用价值</a></dd>
+
+<dd style="background:url() bottom repeat-x;line-height:27px;font-size:14px;">·<a href="/designarticles/rfandwireless/200710/16180.html" title="用于手机电视终端的QAM解调器设计"  target="_blank">
+用于手机电视终端的QAM解调器设计</a></dd>
+
+<dd style="background:url() bottom repeat-x;line-height:27px;font-size:14px;">·<a href="/designarticles/rfandwireless/200802/article_17749.html" title="高性能、低功耗RF驱动放大器（ADI）"  target="_blank">
+高性能、低功耗RF驱动放大器（ADI）</a></dd>
+
+<dd style="background:url() bottom repeat-x;line-height:27px;font-size:14px;">·<a href="/designarticles/show.php?itemid=17743" title="如何构建成熟有效的RFID应用系统"  target="_blank">
+如何构建成熟有效的RFID应用系统</a></dd>
+
+<dd style="background:url() bottom repeat-x;line-height:27px;font-size:14px;">·<a href="/designarticles/show.php?itemid=17745" title="基于rfPIC无线发射器件的环形天线的设计"  target="_blank">
+基于rfPIC无线发射器件的环形天线的设计</a></dd>
+
+
+</div>        <br>
+        <br>
+        <div>编辑：</div>
+        <div><span>本文引用地址：</span>&nbsp;<span><a href="http://www.eeworld.com.cn/designarticles/rfandwireless/200703/11040.html">http://www.eeworld.com.cn/designarticles/rfandwireless/200703/11040.html</a></span> </div>
+        <cite>【<a href="#comment">发表评论</a>】【<a href="javascript:window.external.addFavorite(window.location,'RFID芯片T5557及其FSK读写器电路设计')">加入收藏</a>】【<a href="javascript:$('sendmail').submit();">告诉好友</a>】【<a href="javascript:window.print();" >打印本页</a>】【<a href="javascript:window.close()">关闭窗口</a>】【<a href="#top">返回顶部</a>】</cite>
+        <script type="text/javascript" src="/comment/list_js.php?keyid=3&itemid=11040&commentnum=10&ordertype=1&title=RFID%E8%8A%AF%E7%89%87T5557%E5%8F%8A%E5%85%B6FSK%E8%AF%BB%E5%86%99%E5%99%A8%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"></script>
+         <!--上下文-->
+<div class="border_1" id="pre_and_next"></div>
+<!-- 在这里放评论 -->
+</div>
+</div></div></div></div>
+<script type="text/javascript" src="/designarticles/show_js.php?itemid=11040"></script>
+
+  <div align="center">      
+        <div class="eeworld_link">
+       		<p><cite>友情链接</cite>
+
+
+                 <a href="http://www.cie-info.org.cn">中国电子学会</a>&#124;
+
+
+                 <a href="http://www.csdn.net/">CSDN网</a>&#124;
+
+
+                 <a href="http://www.csia.net.cn/">中国半导体行业网</a>&#124;
+
+
+                 <a href="http://www.cnii.com.cn/">中国信息产业网</a>&#124;
+
+
+ <a href="http://www.cntronics.com">电子元件技术网</a>&#124;
+
+
+                 <a href="http://www.eaw.com.cn">电子设计信息网</a>&#124;
+
+
+
+ <a href="http://www.it168.com/">IT168</a>&#124;
+
+
+
+ <a href="http://www.ec.hc360.com/">慧聪网</a>&#124;
+
+
+
+ <a href="http://www.ccw.com.cn/">计世网</a>&#124;
+
+
+
+ <a href="http://www.365key.com/">天天网摘</a>&#124;
+ 
+
+
+ <a href="http://www.dzsc.com">中国电子市场</a>&#124;
+
+
+
+ <a href="http://www.guangdongdz.com">广东电子商贸网</a>&#124;
+
+
+
+ <a href="http://www.ic72.com/">达普IC芯片交易网</a>&#124;
+
+
+
+ <a href="http://www.cnw.com.cn/">网界网</a>&#124;
+
+
+
+ <a href="http://www.farsight.com.cn/">嵌入式培训</a>&#124;
+
+
+
+ <a href="http://www.toodoc.com/">希赛网</a>&#124;
+
+
+
+                 <a href="http://www.interferencetechnology.cn">电磁干扰与兼容网</a>&#124;
+
+
+
+ <a href="http://www.elexcon.com">电子展览网</a>&#124;
+
+
+
+                 <a href="http://www.51gcs.com ">中华工程师网</a>&#124;
+
+
+
+                 <a href="http://www.51dzw.com/">51电子网</a>&#124;
+
+
+
+                 <a href="http://www.ledhp.com">大功率LED网</a>&#124;
+
+
+
+                 <a href="http://www.connworld.com">连接世界</a>&#124; 
+
+
+
+                 <a href="http://www.elecfans.com">电子发烧友</a>&#124; 
+
+
+
+                 <a href="http://www.sinrel.com">FPGA培训</a>&#124; 
+
+
+
+                 <a href="http://www.5117.com">我要仪器网</a>&#124;
+
+
+
+                 <a href="http://www.ofweek.com">OFweek光通信网</a>&#124;
+                 
+
+
+                 <a href="http://www.eetop.cn">中国电子顶级开发网</a>&#124;
+
+
+
+ <a href="http://www.eeworld.com.cn/page/morelink.html">更多..</a>
+
+
+
+</p>
+        </div>
+        
+        <div class="eeworld_footer" align="center">
+        <p style="text-align: center;"><a href="http://www.eeworld.com.cn/about_us/about_engver.html" target=_blank>About Us</a> - <a href="http://www.eeworld.com.cn/about_us/about_chnver.html" target=_blank>关于我们</a> - <a href="http://www.eeworld.com.cn/page/service.html" target=_blank>客户服务</a> - <a href="http://www.eeworld.com.cn/contact.html" target=_blank>联系方式</a> - <a href="javascript:navigate('mai' + 'lto:' + 'webm' + 'aster@e' + 'eworld.c'+'om.cn?subject=给eeworld建议')" target=_blank>给我们建议</a> - <a href="http://datasheet.eeworld.com.cn/index.shtm" target=_blank>器件索引</a></p>
+
+<p style="text-align: center;">北京集成电路设计园　量子银座506室　电话:(010)82350740</p>
+<p style="text-align: center;">电子工程世界 版权所有 京ICP证 060456</p>
+<p style="text-align: center;">Copyright © 2005-2007 <a href="http://www.eeworld.com.cn/">EEWorld.com.cn</a>, Inc. All rights reserved</p>
+        </div>
+
+</div>
+<div id="mystat" style="display:none">
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=363 border=0 width=0 height=0>");</script><script src='http://s103.cnzz.com/stat.php?id=950751&web_id=950751' language='JavaScript' charset='gb2312'></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-7444163-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</div>
+  </div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8558123-3");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

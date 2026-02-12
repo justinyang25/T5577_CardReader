@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0044)http://www.avrw.com/article/art_112_4184.htm -->
+<HTML><HEAD><TITLE>RFID芯片T5557及其FSK读写器电路设计</TITLE>
+<META 
+content=RFID芯片T5557及其FSK读写器电路设计/单片机、ARM、DSP、CPLD、LCD、EDA/FTP、电子资料、免费下载、电子爱好者社区,学习资料/RFID芯片T5557及其FSK读写器电路设计电子问题有问必答,综合电子论坛欢迎您！ 
+name=keywords>
+<META 
+content=RFID芯片T5557及其FSK读写器电路设计/摘要：T5557是兼容e555x的RFID芯片，但又具有与e555x系列芯片不同的新性能。文章着重介绍了T5557的新特点及工作原理，并对其RSK工作模式下读写器的电路设计作了分析，最后给出了D类功放/RFID芯片T5557及其FSK读写器电路设计电子问题有问必答,综合电子论坛欢迎您！ 
+name=description>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<STYLE type=text/css>.style1 {
+	COLOR: #ffffff
+}
+BODY {
+	FONT-SIZE: 12px; BACKGROUND: #ffffff; MARGIN: 0px; COLOR: #000000; FONT-FAMILY: 宋体,tahoma,fantasy; TEXT-ALIGN: center
+}
+.mian {
+	BORDER-RIGHT: #ffffff 3px double; PADDING-RIGHT: 2px; BORDER-TOP: #ffffff 3px double; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; MARGIN: 12px auto 0px; BORDER-LEFT: #ffffff 3px double; WIDTH: 98%; PADDING-TOP: 2px; BORDER-BOTTOM: #ffffff 3px double; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left; min-width: 600px
+}
+.top {
+	BORDER-RIGHT: #99a3ab 1px solid; BORDER-TOP: #99a3ab 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 12px; BORDER-LEFT: #99a3ab 1px solid; COLOR: white; TEXT-INDENT: 5px; LINE-HEIGHT: 22px; BORDER-BOTTOM: #99a3ab 1px solid; HEIGHT: 22px; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left
+}
+.bottom {
+	BORDER-RIGHT: #99a3ab 1px solid; BORDER-LEFT: #99a3ab 1px solid; BORDER-BOTTOM: #99a3ab 1px solid; HEIGHT: 25px; BACKGROUND-COLOR: #c9d4db; TEXT-ALIGN: center
+}
+.title {
+	FONT-WEIGHT: bold; COLOR: #203e46
+}
+TEXTAREA {
+	BORDER-TOP-WIDTH: 1px; FONT-WEIGHT: normal; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 12px; BACKGROUND: #fcfff7; BORDER-BOTTOM-WIDTH: 1px; WIDTH: 98%; LINE-HEIGHT: normal; FONT-STYLE: normal; BORDER-RIGHT-WIDTH: 1px
+}
+INPUT {
+	FONT-SIZE: 12px
+}
+SELECT {
+	FONT-SIZE: 12px; BACKGROUND: #fcfff7; MARGIN: 1px
+}
+INPUT.text {
+	BORDER-RIGHT: #ffffff 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #ffffff 1px solid; PADDING-LEFT: 1px; BACKGROUND: #9e9585; PADDING-BOTTOM: 1px; MARGIN: 1px; BORDER-LEFT: #ffffff 1px solid; PADDING-TOP: 1px; BORDER-BOTTOM: #ffffff 1px solid; HEIGHT: 18px
+}
+INPUT.button {
+	BORDER-RIGHT: #2c68b9 4px solid; BORDER-TOP: #2c68b9 1px solid; BACKGROUND: #ffffff; MARGIN: 2px 5px; BORDER-LEFT: #2c68b9 4px solid; COLOR: #000000; BORDER-BOTTOM: #2c68b9 1px solid; HEIGHT: 20px
+}
+.adding {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; OVERFLOW: hidden; PADDING-TOP: 3px; HEIGHT: 25px
+}
+.Stable {
+	BORDER-TOP: medium none; BACKGROUND: #def0fe; BORDER-LEFT: #99a3ab 1px solid; WIDTH: 100%
+}
+.Stable TD {
+	BORDER-RIGHT: #99a3ab 1px solid; BORDER-TOP: medium none; FONT-SIZE: 12px; BORDER-BOTTOM: #99a3ab 1px solid
+}
+.Stable TH {
+	BORDER-RIGHT: #99a3ab 1px solid; BORDER-TOP: medium none; FONT-SIZE: 12px; BACKGROUND: #c4d4dc; BORDER-BOTTOM: #99a3ab 1px solid
+}
+FORM {
+	MARGIN: 0px
+}
+TABLE {
+	FONT-SIZE: 12px
+}
+TH {
+	FONT-SIZE: 12px
+}
+TD {
+	FONT-SIZE: 12px
+}
+TR {
+	FONT-SIZE: 12px
+}
+.content {
+	BORDER-RIGHT: #99a3ab 1px solid; BORDER-TOP: #99a3ab 1px solid; BORDER-LEFT: #99a3ab 1px solid; BORDER-BOTTOM: #99a3ab 1px solid; BACKGROUND-COLOR: #f7b91a
+}
+.content LI {
+	LINE-HEIGHT: 20px; LIST-STYLE-TYPE: none
+}
+A:hover {
+	LEFT: 1px; COLOR: #ff8040; POSITION: relative; TOP: 1px; TEXT-DECORATION: none
+}
+.link {
+	COLOR: #4a4a42; TEXT-DECORATION: none
+}
+.link2 {
+	COLOR: #d65a18; TEXT-DECORATION: none
+}
+.link3 {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.style15 {
+	FONT-SIZE: 18px
+}
+.style16 {
+	FONT-SIZE: 24px
+}
+</STYLE>
+
+<SCRIPT language=JavaScript type=text/JavaScript>
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.3640" name=GENERATOR></HEAD>
+<BODY leftMargin=0 topMargin=0 marginheight="0" marginwidth="0">
+<SCRIPT src="RFID芯片T5557及其FSK读写器电路设计.files/top.htm"></SCRIPT>
+
+<TABLE class=txt_css height=35 cellSpacing=0 cellPadding=0 width="100%" 
+align=center bgColor=#ffffff 
+background=RFID芯片T5557及其FSK读写器电路设计.files/txt_css.gif border=0>
+  <TBODY>
+  <TR vAlign=center>
+    <TD width=46>
+      <DIV align=right><IMG height=11 
+      src="RFID芯片T5557及其FSK读写器电路设计.files/arrow3.gif" width=29 align=absMiddle> 
+      </DIV></TD>
+    <TD><A class=link href="http://www.avrw.com/index.asp">综合电子论坛首页 --&gt; 
+      </A><A class=link href="http://www.avrw.com/learn.htm">学习资料 --&gt; </A><A 
+      class=link href="http://www.avrw.com/article/art_112_p1.htm">通信网络 --&gt; 
+      </A><A class=link 
+      href="http://www.avrw.com/article/art_112_.htm">RFID芯片T5557及其FSK读写器电路设计</A></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD bgColor=#fffbe8>
+      <P align=center>
+      <TABLE cellSpacing=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD bgColor=#fffbe8>
+            <TABLE style="WORD-BREAK: break-all" cellSpacing=10 cellPadding=0 
+            width="90%" align=center border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top width=816 height=200 line-height="35pt">
+                  <DIV align=center><FONT 
+                  size=4><STRONG>RFID芯片T5557及其FSK读写器电路设计</STRONG></FONT></DIV><BR><BR><B>摘要：</B>T5557是兼容e555x的RFID芯片，但又具有与e555x系列芯片不同的新性能。文章着重介绍了T5557的新特点及工作原理，并对其RSK工作模式下读写器的电路设计作了分析，最后给出了D类功放和FSK解调的应用电路。 
+
+                  <DIV>&nbsp;&nbsp; <B>关键词：</B>RFID T5557 读写器 FSK D类功放</DIV>
+                  <DIV><B>1 T5557的主要特点</B></DIV>
+                  <DIV>T5557的Atmel公司生产的非接触式无源可读写RFID器件，这的工作频率（载波）为125kHz。可兼容e555x系列芯片。T5557芯片具有以下主要特性：</DIV>
+                  <DIV>*具有75pF的片上谐振电路电容；</DIV>
+                  <DIV>*7×32bit EEPROM数据存储器（包含32bit的密码存储器）；</DIV>
+                  <DIV>*独立的64位可追踪数据存储器；<BR><IMG height=268 hspace=10 
+                  src="RFID芯片T5557及其FSK读写器电路设计.files/20069422315734.gif" 
+                  width=550 vspace=10 border=0><BR><FONT 
+                  size=3>&nbsp;&nbsp;&nbsp; 
+                  </FONT>*EEPROM中的配置存储器可能设置芯片工作参数；</DIV>
+                  <DIV>*数据速率可在RF/2和RF/128之间的以2的幂次可选；</DIV>
+                  <DIV>*编码方式：NRZ、曼彻斯特及Biphase码；</DIV>
+                  <DIV>*调制方式：FSK、PSK、直接；</DIV>
+                  <DIV>*具有请求应答（AOR）、密码、常规读、直接访问等多种工作模式；</DIV>
+                  <DIV>*具有写保护特性；<B><IMG height=354 hspace=1 
+                  src="RFID芯片T5557及其FSK读写器电路设计.files/20069422315580.gif" 
+                  width=272 align=right vspace=1 border=0></B></DIV>
+                  <DIV>*OTP（一次可编程）功能。<B><BR><BR>2 T5557的应用系统构成</B></DIV>
+                  <DIV>T5557的典型应用系统构成图如图1所示。图中，读写器向T5557（亦称之为tag）传送射频能量和读写命令，同时接收T5557芯片以负载调制方式送来的数据信号。</DIV>
+                  <DIV><B>3 内部组成及工作原理</B></DIV>
+                  <DIV>3．1 内部组成电路</DIV>
+                  <DIV>实际上，T5557芯片的内部电路组成框图也示于图1，从图中可以看出，它由模拟前端、写解码、比特率产生器、调制器、模式寄存器、控制器、存储器、编程用高压产生器、测试逻辑等电路构成。其中：模拟前端电路主要完成芯片模拟信号的处理和变换，包括电流产生、时钟提取、载波中断（空隙gap）检测、负载调制、ESD保护等电路；写解码电路主要在读写器向芯片写数据时，用来解读有关写操作码，并对写数据流进行校验；HV产生器可产生对EEPROM进行编程写入所需的高电压；控制器主要完成四种功能，一是在上电（POR）有效后及读期间，用配置存储器数据（在EEPROM的块0中，见后述）装载模式寄存器，以保证芯片按设置方式工作。二是控制对存储器的访问。三是处理写命令和数据写入。四是在密码模式中，将接收操作码后的32位值与存贮的密码进行比较和判别；调制器用于实现FSK、PSK调制；T5557具有330位EEPROM存储器，其结构如图2所示，分为页0和页1两页。页0的块0是配置存储器。每块的位0是块锁存位，一旦锁存置位，本块（包括锁存位）不能通过射频再次编程。T5557中EEPROM的可追踪数据是指Atmel在生产制造测试过程所保留的众多识别数据，可供查询，这是e555x系列没有的。</DIV>
+                  <DIV>此外，T5557中配置存储器的功能结构位图如图3所示。</DIV>
+                  <DIV>3．2 T5557的初始化及读写器通信</DIV>
+                  <DIV>电源上电后（POR有效），T5557将对存储在EEPROM块0中的数据进行初始化，此时若图3中的POR位为0，则在约3ms后按块0的调制参数设置进行调制。若需置位POR，则其初始化时间约为67ms。</DIV>
+                  <DIV>在卡（tag）与读写器进行通信时：通常由卡将存贮在EEPROM中的数据以负载调制方式循环送至读写器。根据传送数据循环组织方式的不同又可分为常规（regular）读模式、块读模式和序列终止符模式。具体如下：</DIV>
+                  <DIV>（1）常规读模式：传送数据序列从块1的第一位开始至最后一块（最大为块7）的第32位。最后一块的块号由配置存储器的参数MAXBLK值确定。若MAXBLK为0或1，则不断传送块0或块1的数据。工作于此模式时，在传送循环结构数据之前其发送的第一位为逻辑0。<BR><BR><B><A 
+                  href="http://www.avrw.com/article/pic/20069422315621.gif">图3</A></B><BR><BR><FONT 
+                  size=3>&nbsp;&nbsp;&nbsp; 
+                  </FONT>（2）块读模式：在直接访问命令下工作时，仅有被寻址的块被读。在配置存储器PWD位置1时的密码模式下，对32位块的直接访问需要32位密码，若密码不匹配，则T5557会返回常规读模式。在块读模式下的第一位也为逻辑0。</DIV>
+                  <DIV>（3）序列终止符模式（ST）：这是与e5550兼容的一种方式，在数据传送开始和循环数据开始时插入一个序列ST（4位1组成），来实现与读写器的同步。但序列仅用于FSK和曼彻特码调制方式。ST序列第2和第4位时段负载调制在FSK模式时一直关断，在曼彻斯特码时一直接通。该方式通常由EEPROM块0的ST位置1实现。</DIV>
+                  <DIV>3．3 读写器至卡的通信</DIV>
+                  <DIV>读写器发出的命令和写数据可由中断载波形式空隙（gap）的方法来实现，并以两个gap之间的持续时间来编码0和1。当gap时间在50~150μs时，两gap之间的24Tc(Tc为载波周期)时间长为0，54Tc时间长为1，当大于64Tc时间长而无gap再出现时，T5557退出写模式。若命令正确，T5557将正常执行；若出现错误，则T5557转至常规读模式。</DIV>
+                  <DIV>序列中的第一个gap被称为起始gap。为了便于T5557的检测，一般情况下，起始gap应大于其后的gap（见图4）。<BR><BR><B><A 
+                  href="http://www.avrw.com/article/pic/20069422316360.gif">图4</A></B><BR><BR><FONT 
+                  size=3>&nbsp;&nbsp;&nbsp; </FONT>（1）写数据协议</DIV>
+                  <DIV>读写器发出双位码，作为命令传送至T5557。命令的有关构成列于表1。<BR><BR><B>表1 
+                  命令表</B></DIV>
+                  <TABLE borderColorDark=#ffffff width="100%" 
+                  borderColorLight=#000000 border=1>
+                    <TBODY>
+                    <TR>
+                      <TD align=middle width="25%">命令</TD>
+                      <TD align=middle width="12%">命令码</TD>
+                      <TD width="63%">
+                        <DIV align=center>后续位构成</DIV></TD></TR>
+                    <TR>
+                      <TD align=middle width="25%">AOR</TD>
+                      <TD align=middle width="12%">10</TD>
+                      <TD width="63%">密码（第1～32位）</TD></TR>
+                    <TR>
+                      <TD align=middle width="25%">标准写</TD>
+                      <TD align=middle width="12%">1P</TD>
+                      <TD width="63%">锁定位L+数据（第1～32位）+地址（第2～0位）</TD></TR>
+                    <TR>
+                      <TD align=middle width="25%">保护写</TD>
+                      <TD align=middle width="12%">1P</TD>
+                      <TD 
+width="63%">密码（第1～32位）+锁定位L+数据（第1～32为）+地址（第20位）</TD></TR>
+                    <TR>
+                      <TD align=middle width="25%">直接访问（PWD=1）</TD>
+                      <TD align=middle width="12%">1P</TD>
+                      <TD width="63%">密码（第1～32位）+0+地址（第2～0位)</TD></TR>
+                    <TR>
+                      <TD align=middle width="25%">直接访问（PWD=0）</TD>
+                      <TD align=middle width="12%">1P</TD>
+                      <TD width="63%">0+地址（第20位）</TD></TR>
+                    <TR>
+                      <TD align=middle width="25%">页0/1常规读</TD>
+                      <TD align=middle width="12%">1P</TD>
+                      <TD width="63%">　</TD></TR>
+                    <TR>
+                      <TD align=middle width="25%">Reset命令</TD>
+                      <TD align=middle width="12%">00</TD>
+                      <TD width="63%">　</TD></TR></TBODY></TABLE>
+                  <DIV>注：表中P为页选择（P为0或1）</DIV>
+                  <DIV>（2）AOR（请求应答）模式（此地密码位PWD=1）</DIV>
+                  <DIV>当AOR置1（块0），T5557在装载块0后并不调制，将等待来自读写器的有效AOR命令，以备唤醒。AOR命令利用密码激活匹配的T5557芯片，该命令可用于防止冲突，以选择所要的卡读写。</DIV>
+                  <DIV>（3）编程写入</DIV>
+                  <DIV>当所有写信息已被T5557正确接收时，便可编程写入。在写序列传送结束和编程之间有一段延迟。编程写入时间为5.6ms。编程写入成功后，T5557进入块读模式，并传送刚编程写入的块。一个完整的写序列成功的过程如图4所示。<BR><BR><B><A 
+                  href="http://www.avrw.com/article/pic/20069422316371.gif">图5</A></B><BR><BR><FONT 
+                  size=3>&nbsp;&nbsp;&nbsp; </FONT>3．4 扩展模式（X-Mode）</DIV>
+                  <DIV>在块0中将Master key（4位）设置为6或9并将X-Mode位置1，便可进入扩展模式。Master 
+                  key等于9时可进入测试模式，等于6时不允许测试模式。其它Master 
+                  key位置都不能使T5557进入X-Mode，即使X-Mode位置1也不能进入。扩展模式（和e555x不兼容）具有下列特点：</DIV>
+                  <DIV>*波特率：该波特率的值由块0的第9位至14位（n5至n0）的位值n来确定，波特率为fc/(2n+2)，其中fc为载波频率。</DIV>
+                  <DIV>*调制编码方式：由块0的第16至20位设置，编码不同于e555x兼容的方式。</DIV>
+                  <DIV>*OTP功能：若块0的OTP（第24位）置1，所有锁存位置1，则所有块都是写保护的。若Master 
+                  key值为6，则T5557的工作模式被锁存，即为OTP功能。若Master 
+                  key值为9，则测试模式访问允许重构配置。</DIV>
+                  <DIV>*序列开始标志：它由两位（10或01）组成，用于同步读写器，在每一块数据传送开始时插入，10和01是交替使用的。</DIV>
+                  <DIV>*反向数据输出：使数据输出反向（即1与0反向，输出为其反）。</DIV>
+                  <DIV>*快速写。快写模式时，两个Gap之间是12Tc时间长为0，是27Tc时间长为1。而在一个gap后，超过32Tc时间长而不出现下一个gap时，T5557将退出该快写模式。<B><BR></B><IMG 
+                  height=373 hspace=10 
+                  src="RFID芯片T5557及其FSK读写器电路设计.files/20069422317797.gif" 
+                  width=549 vspace=10 border=0><B><BR>4 FSK读写器电路设计</B></DIV>
+                  <DIV>4．1 FSK调制</DIV>
+                  <DIV>T5557芯片的FSK调制方式有FSK1、FSK2、FSK1a和FSK2a四种，其参数列于表2。一个典型的FSK调制波形如图5所示。<BR><BR><B>表2 
+                  T5557的FSK调制（fc为载波频率）</B></DIV>
+                  <TABLE borderColorDark=#ffffff width="100%" 
+                  borderColorLight=#000000 border=1>
+                    <TBODY>
+                    <TR>
+                      <TD align=middle width="33%">模式</TD>
+                      <TD align=middle width="33%">数据0的频率f0</TD>
+                      <TD align=middle width="34%">数据1的频率f1</TD></TR>
+                    <TR>
+                      <TD align=middle width="33%">FSK1</TD>
+                      <TD align=middle width="33%">fc/5</TD>
+                      <TD align=middle width="34%">fc/8</TD></TR>
+                    <TR>
+                      <TD align=middle width="33%">FSK2</TD>
+                      <TD align=middle width="33%">fc/10</TD>
+                      <TD align=middle width="34%">fc/8</TD></TR>
+                    <TR>
+                      <TD align=middle width="33%">FSK1a</TD>
+                      <TD align=middle width="33%">fc/8</TD>
+                      <TD align=middle width="34%">fc/5</TD></TR>
+                    <TR>
+                      <TD align=middle width="33%">FSK2a</TD>
+                      <TD align=middle width="33%">fc/8</TD>
+                      <TD align=middle width="34%">fc/10</TD></TR></TBODY></TABLE>
+                  <DIV>4．2 FSK读写器</DIV>
+                  <DIV>当T5556采用FSK调制模式时，其读写器应具有对应的解调电路，图6所示是一种FSK读写器的电路结构框图。它由4MHz晶振振荡器、分频器、载波功放、gap控制、包络检波、滤波放大、脉冲成形、FSK解调、微控制及与主机接口电路等组成。 
+                  </DIV><SPAN class=style1>(<A class=link3 
+                  href="http://www.avrw.com/" 
+                target=_parent>综合电子论坛</A>)</SPAN></TD></TR></TBODY></TABLE>
+            <P 
+            align=center>&nbsp;*注：部份文章为网上收录供大家共同学习参考之用，并不代表本站意见。如存在版权问题请马上通知我们，我们将马上删除。</P></TD></TR></TBODY></TABLE></P></TD></TR></TBODY></TABLE>
+<SCRIPT src="RFID芯片T5557及其FSK读写器电路设计.files/floor.htm"></SCRIPT>
+
+<SCRIPT src="RFID芯片T5557及其FSK读写器电路设计.files/homeright.js"></SCRIPT>
+
+<SCRIPT language=javascript src="RFID芯片T5557及其FSK读写器电路设计.files/339405.js" 
+type=text/javascript></SCRIPT>
+<NOSCRIPT><A href="http://www.51.la/?339405" target=_blank><IMG 
+style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none" 
+alt=我要啦免费统计 src="RFID芯片T5557及其FSK读写器电路设计.files/go.htm"></A></NOSCRIPT>
+<SCRIPT language=JavaScript src="RFID芯片T5557及其FSK读写器电路设计.files/stat.htm" 
+charset=gb2312></SCRIPT>
+
+<SCRIPT src="RFID芯片T5557及其FSK读写器电路设计.files/shownum.htm"></SCRIPT>
+ </BODY></HTML>
