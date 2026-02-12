@@ -1,0 +1,4 @@
+VB的一个串口控件。如果你的系统没有它，基于它的小程序将不能用。
+串口控制控件MSCOMM32.OCX,用于编写串口控制程序需要调用,很方便的哦。
+注册MSComm32控件，
+网上下载这个控件，然后把它拷贝到到C:\Windows\system32文件夹下，我装的是64位的Win7系统，是在C:\Windows\sysWOW64文件夹下，然后打开cmd,写入代码 regsvr32 C:\Windows\system32\MSComm32.ocx然后按enter会提示你注册成功

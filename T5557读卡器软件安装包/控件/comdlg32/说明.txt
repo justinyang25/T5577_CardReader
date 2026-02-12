@@ -1,0 +1,33 @@
+****************飓风下载**************************
+
+  http://www.jfsky.com  主站
+  http://www.21down.cn  世纪下载中心
+提供 各类破解软件，注册机，汉化软件，源码，书集.游戏.高速下载服务
+
+***************************************************************
+
+dll文件如何安装？comdlg32.dll放哪？ 
+通常是将 dll文件复制到“ X:\Windows\system32 ” (X代表您系统所在目录盘符，如：C:\Windows\system32 ) 目录下。
+
+【注意事项】
+
+
+A.如果您使用的是 32位 Windows 操作系统:
+
+只需解压“32位系统”文件夹内的 comdlg32.dll 文件到“X:\Windows\system32” (X代表您系统所在目录盘符，如：C:\Windows\system32 ) ；
+
+ B.如果您使用的是 64位 Windows 操作系统：
+
+请解压“32位系统”文件夹内的 comdlg32.dll 文件到“ X:\Windows\SysWOW64” (X代表您系统所在目录盘符，如：C:\Windows\SysWOW64 )；
+
+请解压“64位系统”文件夹内的 comdlg32.dll 文件到“ X:\Windows\system32” (X代表您系统所在目录盘符，如：C:\Windows\system32 )；
+
+ 
+
+C.有些 dll文件需要手动注册一下才能使用，手动注册方法：
+
+1.将对应版本的 dll文件复制到“ X:\Windows\system32 ” (X代表您系统所在目录盘符，如：C:\Windows\system32)目录下。
+
+2.在开始菜单中找到“运行(R)” 或者按快捷键 Win+R 。
+
+3.在“运行(R)” 中输入 “ regsvr32 comdlg32.dll ” (不含双引号) 回车即可。
