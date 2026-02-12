@@ -1,0 +1,1 @@
+"Scr\CopyEM4100.c" BROWSE INCDIR(.\Header) DEBUG OBJECTEXTEND PRINT(.\Listings\CopyEM4100.lst) TABS (2) OBJECT(.\Objects\CopyEM4100.obj)

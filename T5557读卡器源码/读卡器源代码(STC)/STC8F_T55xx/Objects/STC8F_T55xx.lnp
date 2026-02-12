@@ -1,0 +1,10 @@
+".\Objects\STARTUP.obj",
+".\Objects\mian.obj",
+".\Objects\Uart.obj",
+".\Objects\EM41xx.obj",
+".\Objects\CopyEM4100.obj",
+".\Objects\EMReadWriteCard.obj",
+".\Objects\T5557.obj",
+".\Objects\CRC16.obj" 
+TO ".\Objects\STC8F_T55xx" 
+PRINT(".\Listings\STC8F_T55xx.m51") RAMSIZE(256) 

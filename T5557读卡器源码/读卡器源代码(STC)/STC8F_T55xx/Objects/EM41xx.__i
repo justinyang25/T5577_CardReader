@@ -1,0 +1,1 @@
+"Scr\EM41xx.c" BROWSE INCDIR(.\Header) DEBUG OBJECTEXTEND PRINT(.\Listings\EM41xx.lst) TABS (2) OBJECT(.\Objects\EM41xx.obj)

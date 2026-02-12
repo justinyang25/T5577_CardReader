@@ -1,0 +1,123 @@
+[Root]
+Most Recent Package=标准安装软件包 1
+
+
+[Package|标准安装软件包 1|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=k:\开发板资料\淘宝发送\RFID开发板\EM4305_T5557开发板（2021版）\T5557开发板（STC8F2K08S2)\T5557读卡器源码\读卡器上位机VB源码\安装包
+
+[Package|标准安装软件包 1|Configure DAO ISAMs]
+Applicable=No
+
+[Package|标准安装软件包 1|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|标准安装软件包 1|Files Found]
+
+[Package|标准安装软件包 1|Files Released]
+
+[Package|标准安装软件包 1|Missing Dependency Information]
+
+[Package|标准安装软件包 1|Out-of-Date Dependency Information]
+C:\WINDOWS\system32\mscomm32.ocx=
+C:\Windows\SysWOW64\MSCOMCTL.OCX=
+C:\Windows\SysWOW64\mscomm32.ocx=
+C:\Windows\SysWOW64\COMDLG32.OCX=
+C:\WINDOWS\system32\MSCOMCTL.OCX=
+
+[Package|标准安装软件包 1|Files Added]
+
+[Package|标准安装软件包 1|Files Removed]
+
+[Package|标准安装软件包 1|Files In Project]
+C:\WINDOWS\system32\msvbvm60.dll=Yes
+C:\WINDOWS\system32\oleaut32.dll=Yes
+C:\WINDOWS\system32\olepro32.dll=Yes
+C:\WINDOWS\system32\asycfilt.dll=Yes
+C:\WINDOWS\system32\stdole2.tlb=Yes
+C:\WINDOWS\system32\VB6CHS.DLL=Yes
+C:\WINDOWS\system32\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\system32\COMDLG32.OCX=Yes
+C:\WINDOWS\system32\CMDLGCHS.DLL=Yes
+C:\WINDOWS\system32\MSCOMM32.OCX=Yes
+C:\WINDOWS\system32\MSCOMCHS.DLL=Yes
+C:\WINDOWS\system32\MSCOMCTL.OCX=Yes
+C:\WINDOWS\system32\MSCMCCHS.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\Documents and Settings\Administrator\桌面\T5557读写.exe=Yes
+
+[Package|标准安装软件包 1|Configure Registry Files]
+Applicable=No
+
+[Package|标准安装软件包 1|Configure Remote Servers]
+Applicable=No
+
+[Package|标准安装软件包 1|Install Locations]
+H:\开发板资料\淘宝发送\RFID开发板\T5557开发板\T5557开发板（STC8F新）\源代码\T5557读写.exe=$(AppPath)
+C:\WINDOWS\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\VB6CHS.DLL=$(WinSysPath)
+C:\WINDOWS\system32\mscomm32.ocx=$(WinSysPath)
+C:\WINDOWS\system32\MSCOMCHS.DLL=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\Users\Administrator\Desktop\T5557读写.exe=$(AppPath)
+D:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Windows\SysWOW64\COMDLG32.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\CMDLGCHS.DLL=$(WinSysPath)
+C:\Windows\SysWOW64\mscomm32.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\MSCOMCHS.DLL=$(WinSysPath)
+C:\Windows\SysWOW64\MSCOMCTL.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSCMCCHS.DLL=$(WinSysPath)
+D:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+D:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+D:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\Documents and Settings\Administrator\桌面\新建文件夹\T5557读写.exe=$(AppPath)
+C:\WINDOWS\system32\COMDLG32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\CMDLGCHS.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSCMCCHS.DLL=$(WinSysPath)
+C:\Documents and Settings\Administrator\桌面\T5557读写.exe=$(AppPath)
+
+[Package|标准安装软件包 1|Configure Shared Files]
+Applicable=Yes
+H:\开发板资料\淘宝发送\RFID开发板\T5557开发板\T5557开发板（STC8F新）\源代码\T5557读写.exe=Yes
+C:\Users\Administrator\Desktop\T5557读写.exe=Yes
+C:\Documents and Settings\Administrator\桌面\新建文件夹\T5557读写.exe=Yes
+C:\Documents and Settings\Administrator\桌面\T5557读写.exe=Yes
+
+[Package|标准安装软件包 1|Distribution]
+Type=single
+Size=
+Title=T55xx读写软件
+
+[Package|标准安装软件包 1|IconGroups]
+Group0=T55xx读写软件
+PrivateGroup0=False
+Parent0=$(Programs)
+
+[Package|标准安装软件包 1|T55xx读写软件]
+Icon1=T5557读写.exe
+Title1=T55xx读写软件
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|标准安装软件包 1|Package]
+PackageFolder=k:\开发板资料\淘宝发送\RFID开发板\EM4305_T5557开发板（2021版）\T5557开发板（STC8F2K08S2)\T5557读卡器源码\读卡器上位机VB源码\安装包
+ProjectFolder=K:\开发板资料\淘宝发送\RFID开发板\EM4305_T5557开发板（2021版）\T5557开发板（STC8F2K08S2)\T5557读卡器源码\读卡器上位机VB源码
+ServerSideCab=
+File1=k:\开发板资料\淘宝发送\RFID开发板\EM4305_T5557开发板（2021版）\T5557开发板（STC8F2K08S2)\T5557读卡器源码\读卡器上位机VB源码\安装包\setup.exe
+File2=k:\开发板资料\淘宝发送\RFID开发板\EM4305_T5557开发板（2021版）\T5557开发板（STC8F2K08S2)\T5557读卡器源码\读卡器上位机VB源码\安装包\Setup.Lst
+File3=k:\开发板资料\淘宝发送\RFID开发板\EM4305_T5557开发板（2021版）\T5557开发板（STC8F2K08S2)\T5557读卡器源码\读卡器上位机VB源码\安装包\T5557读写.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz

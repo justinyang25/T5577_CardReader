@@ -1,0 +1,1 @@
+"Scr\Uart.C" BROWSE INCDIR(.\Header) DEBUG OBJECTEXTEND PRINT(.\Listings\Uart.lst) TABS (2) OBJECT(.\Objects\Uart.obj)
